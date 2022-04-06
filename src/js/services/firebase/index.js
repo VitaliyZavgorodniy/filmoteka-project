@@ -1,8 +1,5 @@
-// const API_KEY = process.env.FIREBASE_API_KEY;
-const API_KEY = "AIzaSyB4V425KB8qdT7A078puHzaRpr1mQw8D84";
-
 export const firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: "AIzaSyB4V425KB8qdT7A078puHzaRpr1mQw8D84",
   authDomain: "filmoteka-9a380.firebaseapp.com",
   projectId: "filmoteka-9a380",
   storageBucket: "filmoteka-9a380.appspot.com",

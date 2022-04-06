@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { firebaseConfig } from "./firebaseConfig";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
+import { firebaseConfig } from "./firebase";
 
 export const loginGoogle = async () => {
   const app = initializeApp(firebaseConfig);
