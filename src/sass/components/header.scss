@@ -1,0 +1,79 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 216px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &_index {
+    background-image: url("../assets/images/background-chairs.png");
+  }
+
+  &_library {
+    background-image: url("../assets/images/background-theatre.png");
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 32px 0 32px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+
+  &__image {
+    width: 40px;
+  }
+
+  &__title {
+    color: #fff;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+
+.menu {
+  display: flex;
+
+  &__item {
+    padding: 2px;
+    margin-right: 39px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    color: #fff;
+    font-family: $ff-main;
+    font-size: $fs-link;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    &.active {
+      border-bottom: 2px solid orange;
+    }
+  }
+}
+
+.search {
+  display: flex;
+  margin-top: 40px;
+
+  &__input {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+  }
+}
