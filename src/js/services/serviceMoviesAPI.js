@@ -25,9 +25,9 @@ export const fetchTrending = async (page = 1) =>
       },
     })
     .then((res) => ({
-      list: res.data,
-      totalPages: res.total_pages,
-      totalItems: res.total_results,
+      list: res.data.results,
+      totalPages: res.data.total_pages,
+      totalItems: res.data.total_results,
     }))
     .catch((e) => console.error(e));
 
@@ -42,9 +42,9 @@ export const fetchSearch = async (page = 1, query) =>
       },
     })
     .then((res) => ({
-      list: res.data,
-      totalPages: res.total_pages,
-      totalItems: res.total_results,
+      list: res.data.results,
+      totalPages: res.data.total_pages,
+      totalItems: res.data.total_results,
     }))
     .catch((e) => console.error(e));
 
@@ -52,8 +52,8 @@ export const fetchSingleMovie = async (id) =>
   await axios
     .get(`/movie/${id}`)
     .then((res) => ({
-      list: res.data,
-      totalPages: res.total_pages,
-      totalItems: res.total_results,
+      list: res.data.results,
+      totalPages: res.data.total_pages,
+      totalItems: res.data.total_results,
     }))
     .catch((e) => console.error(e));
