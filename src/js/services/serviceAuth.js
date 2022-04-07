@@ -1,18 +1,17 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import firebase from "firebase/app";
+import "firebase/auth";
+import "./firebase";
 
-import { firebaseConfig } from "./firebase";
+const provider = new firebase.auth.GoogleAuthProvider();
 
-export const loginGoogle = async () => {
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const provider = new GoogleAuthProvider();
-
-  const response = await signInWithPopup(auth, provider).catch((err) =>
-    console.error(err)
-  );
-
-  const { displayName, accessToken, uid } = response.user;
-
-  return { displayName, accessToken, uid };
-};
+export const loginGoogle = async () =>
+  await firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then((res) => {
+      return {
+        displayName: res.user.displayName,
+        uid: res.user.uid,
+      };
+    })
+    .catch((err) => console.error(err));

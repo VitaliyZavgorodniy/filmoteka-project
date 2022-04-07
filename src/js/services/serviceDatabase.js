@@ -1,47 +1,53 @@
-import { initializeApp } from "firebase/app";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "./firebase";
 
-import { firebaseConfig } from "./firebaseConfig";
+const db = firebase.firestore();
 
-import {
-  getDatabase,
-  ref,
-  set,
-  child,
-  update,
-  remove,
-  push,
-  get
-} from "firebase/database";
+export const fetchWatchedList = async (uid) => {
+  const refData = db.collection("watched").doc(uid);
 
-export const addToWatched = async (uid, data) => {
-  // const list = await getFromWatched(uid);
-
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-
-  const listRef = ref(db, `user-watched/${uid}`);
-  const newItemRef = push(listRef);
-
-  await set(newItemRef, data);
-  return true;
+  return await refData
+    .get()
+    .then((doc) => {
+      if (doc.exists) return doc.data().list;
+      else return [];
+    })
+    .catch((err) => console.error(err));
 };
 
-export const getFromWatched = async (uid) => {
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
+export const updateWatchedList = async (uid, data) => {
+  const refData = db.collection("watched").doc(uid);
 
-  const response = await get(child(ref(db), `user-watched/${uid}`)).catch(
-    (error) => console.error(error)
-  );
+  return await refData
+    .get()
+    .then(async (doc) => {
+      if (doc.exists)
+        await refData
+          .update({
+            list: firebase.firestore.FieldValue.arrayUnion(data),
+          })
+          .then(() => ({ result: "ok" }))
+          .catch((err) => console.error(err));
+      else
+        await db
+          .collection("watched")
+          .doc(uid)
+          .set({ list: [data] })
+          .then(() => ({ result: "ok" }))
+          .catch((err) => console.error(err));
+    })
+    .then(() => ({ status: 200 }))
+    .catch((err) => console.error(err));
+};
 
-  if (response.val()) {
-    const list = Object.values(response.val());
-    localStorage.setItem("watched", JSON.stringify(list));
+export const removeWatchedList = async (uid, data) => {
+  const refData = db.collection("watched").doc(uid);
 
-    return list;
-  } else {
-    localStorage.setItem("watched", JSON.stringify([]));
-  }
-
-  return [];
+  await refData
+    .update({
+      list: firebase.firestore.FieldValue.arrayRemove(data),
+    })
+    .then(() => ({ status: 200 }))
+    .catch((err) => console.error(err));
 };
