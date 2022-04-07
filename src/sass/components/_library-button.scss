@@ -1,0 +1,39 @@
+.btn {
+  width: 129.53px;
+  height: 44px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  outline: none;
+
+  font-family: inherit;
+  @include font(500, 12px, 16px);
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: inherit;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background-color: #ff6b01;
+  }
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 152px;
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    width: 148px;
+    height: 42px;
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+}
+// для видимости кнопок//
+// body {
+//   background-color: black;
+// }
