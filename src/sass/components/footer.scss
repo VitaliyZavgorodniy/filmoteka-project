@@ -1,0 +1,53 @@
+    .footer {
+        background-color: #F7F7F7;
+        text-align: center;
+        padding-top: 29px;
+        padding-bottom: 55px;
+        @media screen and (min-width: $tablet) {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            @media screen and (min-width: $desktop) {
+                padding-bottom: 28px;
+            }
+        }
+        &__block {
+            display: flex;
+            flex-direction: row;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10px;
+            justify-content: center;
+            @media screen and (max-width: 767px) {
+                margin-top: 10px;
+            }
+            @media screen and (min-width: $tablet) {
+                margin-top: 0px;
+                margin-left: 5px;
+                margin-right: 20%;
+            }
+        }
+        &__icon {
+            width: 14px;
+            height: 13px;
+            background-color: red;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-top: 2px;
+        }
+        &__text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 16px;
+            color: #545454;
+            @media screen and (min-width: $tablet) {
+                font-size: 16px;
+            }
+        }
+    }
