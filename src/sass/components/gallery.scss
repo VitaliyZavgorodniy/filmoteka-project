@@ -54,3 +54,61 @@
   @include font(500, 12px, 14px);
   color: #ff6b01;
 }
+
+
+// Skeletons for Movie Cards loading
+.card-sceleton {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 33%;
+  min-height: 489px;
+  border-radius: 5px;
+  margin-bottom: 32px;
+  padding: 10px;
+  border: solid 0.5px grayscale($color: #edeaea);
+  background-color: white;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
+    0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.06);
+
+  &:nth-child(3n + 3) {
+    margin-right: 0px;
+  }
+}
+
+.image-sceleton {
+  min-height: 449px;
+  background-color: grayscale($color: #edeaea);
+  border: 0px;
+}
+
+.title-sceleton {
+  min-height: 30px;
+  background: grayscale($color: #edeaea);
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.subtitle-sceleton {
+  min-height: 30px;
+  width: 70%;
+  background: grayscale($color: #edeaea);
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.skeleton {
+  z-index: 2;
+  opacity: .7;
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: hsl(197, 32%, 78%);
+  }
+
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
