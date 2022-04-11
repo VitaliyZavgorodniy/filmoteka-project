@@ -6,6 +6,8 @@ import { initHome } from "../pages/home";
 import { initLibrary } from "../pages/library";
 
 export const handleLink = (e) => {
+  e.preventDefault();
+  
   const link = e.currentTarget;
   const value = link.getAttribute("data-page");
 
