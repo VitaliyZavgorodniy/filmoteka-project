@@ -1,60 +1,45 @@
-// .section {
-//   padding-top: 20px;
-//   padding-bottom: 40px;
-//   @media screen and (min-width: 768px) {
-//     padding-top: 60px;
-//     padding-bottom: 61px;
-//   }
-//   @media screen and (min-width: 1024px) {
-//     padding-top: 60px;
-//     padding-bottom: 60px;
-//   }
-// }
-.gallery-list {
-  @media screen and (min-width: 768px) {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -16px;
-  }
-  @media screen and(min-width:1024px) {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -8px;
-  }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.gallery-list__item {
+.card {
   @media screen and (max-width: 767px) {
     &:not(:last-child) {
       margin-bottom: 20px;
     }
   }
+
   @media screen and (min-width: 768px) {
     margin: 16px;
     flex-basis: calc((100% - (2 * 32px)) / 2);
   }
+
   @media screen and (min-width: 1024px) {
     margin: 8px;
     flex-basis: calc((100% - (3 * 16px)) / 3);
   }
-}
-.gallery-list__thumb {
-  margin-bottom: 10px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-.galeery-list__title {
-  font-family: inherit;
-  @include font(500, 12px, 14px);
-  text-transform: uppercase;
-  color: #000000;
-}
-.gallery-list__text {
-  font-family: inherit;
-  @include font(500, 12px, 14px);
-  color: #ff6b01;
-}
 
+  &__thumb {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+    // overflow: hidden;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    @include font(500, 12px, 14px, $black-color);
+  }
+
+  &__text {
+    @include font(500, 12px, 14px, $accent-color);
+  }
+
+  &__rating {
+    @include font(500, 12px, 14px, $white-color);
+  }
+}
 
 // Skeletons for Movie Cards loading
 .card-sceleton {
@@ -67,8 +52,7 @@
   padding: 10px;
   border: solid 0.5px grayscale($color: #edeaea);
   background-color: white;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
-    0px 4px 4px rgba(0, 0, 0, 0.06),
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.06);
 
   &:nth-child(3n + 3) {
@@ -99,7 +83,7 @@
 
 .skeleton {
   z-index: 2;
-  opacity: .7;
+  opacity: 0.7;
   animation: skeleton-loading 1s linear infinite alternate;
 }
 

@@ -1,19 +1,19 @@
+import firebase from "firebase/app";
+import "firebase/auth";
 import "./firebase";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 
-const provider = new GoogleAuthProvider();
-const auth = getAuth();
+const provider = new firebase.auth.GoogleAuthProvider();
 
 export const loginGoogle = async () =>
-  await signInWithPopup(auth, provider)
-    .then(res => {
+  await firebase
+    .auth()
+    .signInWithPopup(provider)
+    .then((res) => {
       const { uid, displayName } = res.user;
-
-      localStorage.setItem("user", JSON.stringify({ uid, displayName }));
 
       return { uid, displayName, status: 200 };
     })
-    .catch(err => {
+    .catch((err) => {
       console.error(err);
       return { status: 500 };
     });

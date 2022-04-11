@@ -13,7 +13,9 @@
           <a class="navigation__link active" data-page="home" href="#">Home</a>
         </li>
         <li class="navigation__item">
-          <a class="navigation__link" data-page="library" href="#">My library</a>
+          <a class="navigation__link" data-page="library" href="#"
+            >My library</a
+          >
         </li>
       </ul>
     </nav>
@@ -36,15 +38,39 @@
 
       <ul class="library-menu" data-root="library-buttons">
         <li class="library-menu__item">
-          <button type="button" class="btn">Watched</button>
+          <button
+            type="button"
+            data-action="watched"
+            class="library-menu__button is-active"
+          >
+            watched
+          </button>
         </li>
         <li class="library-menu__item">
-          <button type="button" class="btn">queue</button>
+          <button
+            type="button"
+            data-action="queue"
+            class="library-menu__button"
+          >
+            queue
+          </button>
+        </li>
+        <li class="library-menu__item">
+          <button type="button" class="button-logout" data-action="logout">
+            Log Out
+          </button>
         </li>
       </ul>
 
       <div class="header-login-button" data-root="header-login">
-        <button class="btn-login" data-action="login-google">Login Google</button>
+        <button class="login-button" data-action="login-google">
+          <img
+            class="login-button__icon"
+            src="./assets/icons/google-logo.svg"
+            alt="google-icon"
+          />
+          <span class="login-button__title">Sign in with Google</span>
+        </button>
       </div>
     </div>
   </div>

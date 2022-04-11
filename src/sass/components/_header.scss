@@ -119,20 +119,6 @@
   margin-top: 54px;
 }
 
-.library-menu {
-  @include animate-active();
-
-  display: flex;
-
-  &__item {
-    margin-right: 10px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
-
 .search-form {
   @include animate-active();
 

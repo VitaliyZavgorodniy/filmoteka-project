@@ -1,6 +1,6 @@
-import { initializeApp } from "firebase/app";
+import firebase from "firebase/app";
 
-initializeApp({
+firebase.initializeApp({
   apiKey: "AIzaSyB4V425KB8qdT7A078puHzaRpr1mQw8D84",
   authDomain: "filmoteka-9a380.firebaseapp.com",
   projectId: "filmoteka-9a380",

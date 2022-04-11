@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
 $ff-main: "Roboto", sans-serif;
 $fs-link: 12px;
 $accent-color: #ff6b08;
+$accent-shadow: rgba(255, 107, 1, 0.6);
+$white-color: #fff;
+$black-color: #000;
+$grey-bg: #dddddd;
+$light-grey: #00000054;
+
+$ease-transition: 250ms ease-in-out;
