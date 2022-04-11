@@ -1,4 +1,5 @@
 import { store } from "./store";
+import "./modal";
 
 import "./handlers/handleLink";
 import "./handlers/handleLibType";
