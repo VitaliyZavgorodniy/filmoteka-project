@@ -1,6 +1,6 @@
 import { fetchGenres } from "./services/serviceMoviesAPI";
 import { fetchTrending } from "./services/serviceMoviesAPI";
-import { renderGalleryTrendingList } from "./services/renderGalleryTrendingList";
+import { renderGallery } from "./services/renderGalleryTrendingList";
 
 const state = {
   isLoading: false,
@@ -31,7 +31,7 @@ const fetchMovies = () => {
     .then(() => {
       const { genres, list, currentPage, totalPages } = state;
 
-      renderGalleryTrendingList(genres, list);
+      renderGallery(genres, list);
     })
     .catch((e) => console.error(e));
 };

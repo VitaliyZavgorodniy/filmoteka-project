@@ -1,7 +1,7 @@
 const refs = {
   gallery: document.querySelector(`.gallery-list`),
 };
-export function renderGalleryTrendingList(genres, list) {
+export function renderGallery(genres, list) {
   const filterGenres = (genre_ids) =>
     genre_ids
       .map((id) => genres.find((genre) => genre.id === id))
@@ -21,7 +21,7 @@ export function renderGalleryTrendingList(genres, list) {
           release_date,
         vote_average
         }) => {
-            console.log(list)
+       
         const name = title ? title : original_name;
         const genreList = genres
           ? mappedGenres(genres)
@@ -38,7 +38,7 @@ export function renderGalleryTrendingList(genres, list) {
         <div class="gallery-list__content">
           <h2 class="galeery-list__title ">${name}</h2>
           <p class="gallery-list__text ">
-            ${genreList} | ${release_date}<button type="button">${vote_average}</button>
+            ${genreList} | ${release_date}<span>${vote_average}</span>
           </p>
         </div>
       </li>`;

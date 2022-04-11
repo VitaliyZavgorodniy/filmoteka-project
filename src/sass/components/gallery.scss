@@ -54,7 +54,10 @@
   @include font(500, 12px, 14px);
   color: #ff6b01;
 }
-.gallery-list__text button{
+.gallery-list__text span{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 36px;
   height: 16px;
   margin-left: 5px;
