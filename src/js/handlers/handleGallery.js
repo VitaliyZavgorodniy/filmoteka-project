@@ -1,4 +1,3 @@
-import Pagination from "tui-pagination";
 import { store } from "../store";
 
 import {
