@@ -2,6 +2,7 @@ import { store } from "../store";
 import { loginGoogle } from "../services/serviceAuth";
 import { renderLibsSelector } from "../render/renderLibsSelector";
 import { initLibrary } from "../pages/library";
+import { fetchLibrary } from "../services/serviceDatabase";
 
 export const handleLogin = () =>
   loginGoogle().then((res) => {
@@ -9,6 +10,9 @@ export const handleLogin = () =>
       const { uid, displayName } = res;
       localStorage.setItem("user", JSON.stringify({ uid, displayName }));
       store.user = { uid, displayName };
+
+      fetchLibrary(uid, "queue").then((res) => (store.queue = res));
+      fetchLibrary(uid, "watched").then((res) => (store.watched = res));
 
       renderLibsSelector();
       initLibrary();

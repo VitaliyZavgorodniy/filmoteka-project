@@ -6,7 +6,7 @@ import {
   fetchSearch,
   fetchSingleMovie,
 } from "../services/serviceMoviesAPI";
-import { fetchWatchedList, fetchQueuedList } from "../services/serviceDatabase";
+import { fetchLibrary } from "../services/serviceDatabase";
 
 import { renderGallery } from "../render/renderGallery";
 import { renderSkeletonGallery } from "../render/renderSkeletonGallery";
@@ -27,6 +27,6 @@ export const handleGallery = (mode, page, query) => {
 
   if (mode === "watched") {
     const uid = store.user.uid;
-    fetchWatchedList(uid).then((res) => renderGallery(res));
+    fetchLibrary(uid).then((res) => renderGallery(res));
   }
 };

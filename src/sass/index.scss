@@ -6,11 +6,13 @@
 @import 'utils/variables.scss';
 @import 'utils/visually-hidden.scss';
 
-@import 'components/container';
+@import 'components/container.scss';
 @import 'components/header.scss';
-@import 'components/library-button';
+@import 'components/buttons.scss';
+@import 'components/library-buttons.scss';
 @import 'components/main.scss';
 @import 'components/gallery.scss';
 @import 'components/footer.scss';
-@import 'components/modal.scss';
-@import 'components/login-button.scss';
+@import 'components/backdrop.scss';
+@import 'components/modal-details.scss';
+@import 'components/spinner.scss';

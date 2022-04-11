@@ -33,9 +33,27 @@
   padding: 4px;
   color: #fff;
   transition: color $ease-transition;
-  
+
   &:hover {
     cursor: pointer;
     color: $accent-color;
+  }
+}
+
+.button-library {
+  border-radius: 5px;
+  padding: 12px 10px;
+  background-color: transparent;
+  border: 1px solid #000;
+  text-transform: uppercase;
+  @include font(500, 12px, 16px);
+
+  &:hover,
+  &:focus,
+  &.is-active {
+    cursor: pointer;
+    color: $white-color;
+    border-color: $accent-color;
+    background-color: $accent-color;
   }
 }

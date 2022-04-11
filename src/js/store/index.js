@@ -1,10 +1,12 @@
 export const store = {
   user: null,
-  genres: [],
+  genresList: [],
   page: 1,
   mode: "trend",
   modes: ["trend", "find", "queue", "watched"],
   refs: {
+    rootPagination: document.querySelector(".pagination"),
+    rootDetails: document.querySelector("[data-modal]"),
     rootGallery: document.querySelector(".gallery"),
     rootControl: document.querySelector(".control-bar"),
     rootMenu: document.querySelector(".navigation__menu"),
@@ -16,6 +18,5 @@ export const store = {
     refLoginHeader: document.querySelector('[data-root="header-login"]'),
     btnLogin: document.querySelector('[data-action="login-google"]'),
     btnLogout: document.querySelector('[data-action="logout"]'),
-    rootPagination: document.querySelector(".pagination"),
   },
 };

@@ -21,3 +21,19 @@
     transform: scaleY(1);
   }
 }
+
+@mixin breakpoint($point) {
+  @if $point == desktop {
+    @media screen and (min-width: $desktop) {
+      @content;
+    }
+  } @else if $point == tablet {
+    @media screen and (min-width: $tablet) {
+      @content;
+    }
+  } @else if $point == mobile {
+    @media screen and (max-width: $phone) {
+      @content;
+    }
+  }
+}
