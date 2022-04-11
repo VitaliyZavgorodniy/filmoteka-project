@@ -29,6 +29,7 @@ export const fetchTrending = async (page = 1) =>
       totalPages: res.data.total_pages,
       totalItems: res.data.total_results,
     }))
+
     .catch((e) => console.error(e));
 
 export const fetchSearch = async (page = 1, query) =>
