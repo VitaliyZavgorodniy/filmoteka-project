@@ -1,14 +1,14 @@
+import "./firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
-import "./firebase";
 
 const db = firebase.firestore();
 
-export const fetchWatchedList = async (uid) => {
+export const fetchWatchedList = async uid => {
   const refData = db.collection("watched").doc(uid);
 
   try {
-    return await refData.get().then((doc) => {
+    return await refData.get().then(doc => {
       if (doc.exists) return doc.data().list;
       else return [];
     });
@@ -22,10 +22,10 @@ export const updateWatchedList = async (uid, data) => {
   const refData = db.collection("watched").doc(uid);
 
   try {
-    await refData.get().then(async (doc) => {
+    await refData.get().then(async doc => {
       if (doc.exists)
         await refData.update({
-          list: firebase.firestore.FieldValue.arrayUnion(data),
+          list: firebase.firestore.FieldValue.arrayUnion(data)
         });
       else
         await db
@@ -47,7 +47,7 @@ export const removeWatchedList = async (uid, data) => {
 
   try {
     await refData.update({
-      list: firebase.firestore.FieldValue.arrayRemove(data),
+      list: firebase.firestore.FieldValue.arrayRemove(data)
     });
 
     return { status: 200 };
@@ -57,11 +57,11 @@ export const removeWatchedList = async (uid, data) => {
   }
 };
 
-export const fetchQueuedList = async (uid) => {
+export const fetchQueuedList = async uid => {
   const refData = db.collection("queued").doc(uid);
 
   try {
-    return await refData.get().then((doc) => {
+    return await refData.get().then(doc => {
       if (doc.exists) return doc.data().list;
       else return [];
     });
@@ -75,10 +75,10 @@ export const updateQueuedList = async (uid, data) => {
   const refData = db.collection("queued").doc(uid);
 
   try {
-    await refData.get().then(async (doc) => {
+    await refData.get().then(async doc => {
       if (doc.exists)
         await refData.update({
-          list: firebase.firestore.FieldValue.arrayUnion(data),
+          list: firebase.firestore.FieldValue.arrayUnion(data)
         });
       else
         await db
@@ -100,7 +100,7 @@ export const removeQueuedList = async (uid, data) => {
 
   try {
     await refData.update({
-      list: firebase.firestore.FieldValue.arrayRemove(data),
+      list: firebase.firestore.FieldValue.arrayRemove(data)
     });
 
     return { status: 200 };

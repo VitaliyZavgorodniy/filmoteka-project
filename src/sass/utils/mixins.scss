@@ -4,9 +4,20 @@
   align-items: $align;
 }
 
-@mixin font($fw, $fs, $lh, $ls: 0.03em) {
+@mixin font($fw, $fs, $lh, $fc: #000, $ls: 0.03em) {
   font-weight: $fw;
   font-size: $fs;
   line-height: $lh;
+  color: $fc;
   letter-spacing: $ls;
+}
+
+@mixin animate-active {
+  height: 0;
+  transform: scaleY(0);
+  transition: transform ease-in 300ms, height ease-in 300ms;
+  &.active {
+    height: auto;
+    transform: scaleY(1);
+  }
 }

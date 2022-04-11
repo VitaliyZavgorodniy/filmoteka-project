@@ -1,37 +1,51 @@
-<header class="container header-container">
-
-    <div class="header-nav">
-        <svg class="logo-icon">
-            <use href="./assets/icons/sprite.svg#icon-film"></use>
+<header class="header">
+  <div class="header__container">
+    <nav class="navigation">
+      <div class="logo">
+        <svg class="logo__icon">
+          <use href="./assets/icons/sprite.svg#icon-film"></use>
         </svg>
-        <p class="logo-text">Filmoteka</p>
+        <span class="logo__text">Filmoteka</span>
+      </div>
 
-        <ul class="header-nav-list">
-            <li class="header-nav-item current">
-                <a href="./index.html">HOME</a>
-            </li>
-            <li class="header-nav-item">
-                <a href="">MY LIBRARY</a>
-            </li>
-        </ul>
-    </div>
+      <ul class="navigation__menu">
+        <li class="navigation__item">
+          <a class="navigation__link active" data-page="home" href="#">Home</a>
+        </li>
+        <li class="navigation__item">
+          <a class="navigation__link" data-page="library" href="#">My library</a>
+        </li>
+      </ul>
+    </nav>
 
+    <div class="control-bar">
+      <form class="search-form active" data-root="search-bar">
+        <input
+          name="searchQuery"
+          type="text"
+          class="search-form__input"
+          placeholder="Search for movies..."
+        />
 
-    <form class="header-search search">
-        <label>
-            <input type="text" class="search-input" placeholder="Поиск фильмов"/>
-        </label>
-
-        <button type="submit" class="search-button">
-            <svg class="search-icon">
-                <use href="./assets/icons/sprite.svg#icon-search-2"></use>
-            </svg>
+        <button class="search-form__button" type="submit">
+          <svg class="search-form__icon">
+            <use href="./assets/icons/sprite.svg#icon-search-2"></use>
+          </svg>
         </button>
-    </form>
+      </form>
 
+      <ul class="library-menu" data-root="library-buttons">
+        <li class="library-menu__item">
+          <button type="button" class="btn">Watched</button>
+        </li>
+        <li class="library-menu__item">
+          <button type="button" class="btn">queue</button>
+        </li>
+      </ul>
+
+      <div class="header-login-button" data-root="header-login">
+        <button class="btn-login" data-action="login-google">Login Google</button>
+      </div>
+    </div>
+  </div>
 </header>
-
-<div>
-    <button type="button" class="btn">Watched</button>
-    <button type="button" class="btn">queue</button>
-</div>

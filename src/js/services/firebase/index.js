@@ -1,6 +1,6 @@
-import firebase from "firebase/app";
+import { initializeApp } from "firebase/app";
 
-firebase.initializeApp({
+initializeApp({
   apiKey: "AIzaSyB4V425KB8qdT7A078puHzaRpr1mQw8D84",
   authDomain: "filmoteka-9a380.firebaseapp.com",
   projectId: "filmoteka-9a380",
@@ -9,5 +9,5 @@ firebase.initializeApp({
   appId: "1:368402756405:web:bba633573b4365a7c1927c",
   measurementId: "G-ZYTPDQ36HZ",
   databaseURL:
-    "https://filmoteka-9a380-default-rtdb.europe-west1.firebasedatabase.app",
+    "https://filmoteka-9a380-default-rtdb.europe-west1.firebasedatabase.app"
 });
