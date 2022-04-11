@@ -1,6 +1,6 @@
 import { fetchGenres } from "./services/serviceMoviesAPI";
 import { fetchTrending } from "./services/serviceMoviesAPI";
-import { renderGallery } from "./services/renderGalleryTrendingList";
+import { renderGallery } from "./services/renderGallery";
 
 const state = {
   isLoading: false,

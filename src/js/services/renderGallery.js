@@ -45,5 +45,5 @@ export function renderGallery(genres, list) {
       }
     )
     .join(``);
-  refs.gallery.insertAdjacentHTML(`beforeend`, markup);
+  refs.gallery.innerHTML=markup;
 }
