@@ -25,8 +25,8 @@ export const handleGallery = (mode, page, query) => {
     });
   }
 
-  if (mode === "watched") {
+  if (mode === "watched" || mode === "queue") {
     const uid = store.user.uid;
-    fetchLibrary(uid).then((res) => renderGallery(res));
+    fetchLibrary(uid, mode).then((res) => renderGallery(res));
   }
 };

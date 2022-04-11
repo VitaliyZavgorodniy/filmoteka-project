@@ -61,10 +61,9 @@ export const renderWatchButton = (movie) => {
 
 export const renderQueueButton = (movie) => {
   const buttonRoot = document.querySelector('[data-root="queue"]');
+  buttonRoot.innerHTML = renderSpinner();
   const { id } = movie;
   const { uid } = store.user;
-
-  buttonRoot.innerHTML = renderSpinner();
 
   fetchLibrary(uid, "queue").then((res) => {
     const isQueued = checkInLib(id, res);

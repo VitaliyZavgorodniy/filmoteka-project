@@ -1,9 +1,18 @@
+.section {
+  display: flex;
+  justify-content: center;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  max-width: 1024px;
 }
 
 .card {
+  &:hover {
+    cursor: pointer;
+  }
   @media screen and (max-width: 767px) {
     &:not(:last-child) {
       margin-bottom: 20px;
