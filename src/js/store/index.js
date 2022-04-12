@@ -5,6 +5,7 @@ export const store = {
   mode: "trend",
   modes: ["trend", "find", "queue", "watched"],
   refs: {
+    rootHeader: document.querySelector(".header__container"),
     rootPagination: document.querySelector('[data-root="pagination"]'),
     rootDetails: document.querySelector("[data-modal]"),
     rootGallery: document.querySelector(".gallery"),

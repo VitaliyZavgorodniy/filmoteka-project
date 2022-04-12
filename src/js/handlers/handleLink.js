@@ -11,7 +11,8 @@ export const handleLink = (e) => {
   const link = e.currentTarget;
   const value = link.getAttribute("href");
 
-  clearActive(store.refs.rootMenu);
+  const { rootHeader, rootMenu } = store.refs;
+  clearActive(rootMenu);
 
   store.refs.rootMenu
     .querySelector(`[href="${value}"]`)
@@ -20,10 +21,14 @@ export const handleLink = (e) => {
   if (value === "home") {
     renderSearchForm();
     initHome();
+    rootHeader.classList.remove("header__container_library");
+    rootHeader.classList.add("header__container_home");
   }
   if (value === "library") {
     renderLibsSelector();
     initLibrary();
+    rootHeader.classList.add("header__container_library");
+    rootHeader.classList.remove("header__container_home");
   }
 };
 

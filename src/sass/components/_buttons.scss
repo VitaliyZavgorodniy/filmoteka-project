@@ -33,6 +33,11 @@
   padding: 4px;
   color: #fff;
   transition: color $ease-transition;
+  margin-top: 20px;
+
+  @include breakpoint(tablet) {
+    margin: 0;
+  }
 
   &:hover {
     cursor: pointer;

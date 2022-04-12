@@ -1,7 +1,9 @@
 .library-menu {
   @include animate-active();
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 
   &__item {
     margin-right: 10px;

@@ -4,7 +4,17 @@
   width: 100%;
   background-color: #000;
 
+  &__backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #00000090;
+    height: 100%;
+    width: 100%;
+  }
+
   &__container {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +23,6 @@
     height: 230px;
     padding: 0 20px;
     background-color: #000;
-    background-image: url("../assets/images/header-mob-1x.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -23,27 +32,27 @@
       height: 216px;
     }
 
-    @media (min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      background-image: url("../assets/images/header-mob-2x.jpg");
-    }
-    @media screen and (min-width: 768px) {
-      background-image: url("../assets/images/header-tab-1x.jpg");
+    &_home {
+      background-image: url("../assets/images/header-mob-1x.jpg");
 
-      @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
-        background-image: url("../assets/images/header-tab-2x.jpg");
+      @include breakpoint(tablet) {
+        background-image: url("../assets/images/header-tab-1x.jpg");
+      }
+
+      @include breakpoint(desktop) {
+        background-image: url("../assets/images/header-desk-1x.jpg");
       }
     }
-    @media screen and (min-width: 1200px) {
-      background-image: url("../assets/images/header-desk-1x.jpg");
 
-      @media (min-device-pixel-ratio: 2),
-        (min-resolution: 192dpi),
-        (min-resolution: 2dppx) {
-        background-image: url("../assets/images/header-desk-2x.jpg");
+    &_library {
+      background-image: url("../assets/images/library-mob-1x.png");
+
+      @include breakpoint(tablet) {
+        background-image: url("../assets/images/library-tab-1x.png");
+      }
+
+      @include breakpoint(desktop) {
+        background-image: url("../assets/images/library-desk-1x.png");
       }
     }
   }
@@ -73,6 +82,7 @@
 }
 
 .navigation {
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   width: 100%;
