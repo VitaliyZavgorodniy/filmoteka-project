@@ -1,11 +1,12 @@
 import { store } from "./store";
-import "./modal";
 
 import "./handlers/handleLink";
 import "./handlers/handleLibType";
 import "./handlers/handleLogin";
 import "./handlers/handleLogout";
 import "./handlers/handleSearch";
+import "./handlers/handleMovieCard";
+
 import { handleGallery } from "./handlers/handleGallery";
 
 import {

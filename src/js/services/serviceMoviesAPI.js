@@ -48,12 +48,10 @@ export const fetchSearch = async (page = 1, query) =>
     }))
     .catch((e) => console.error(e));
 
-export const fetchSingleMovie = async (id) =>
+export const fetchSingleMovie = async (id, language = "en-US") =>
   await axios
-    .get(`/movie/${id}`)
-    .then((res) => ({
-      list: res.data.results,
-      totalPages: res.data.total_pages,
-      totalItems: res.data.total_results,
-    }))
+    .get(`/movie/${id}`, {
+      params: { language },
+    })
+    .then((res) => ({ ...res.data }))
     .catch((e) => console.error(e));
