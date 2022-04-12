@@ -7,8 +7,6 @@ export const renderPagination = (totalItems = 1) => {
   const { mode } = store;
   const { rootPagination } = store.refs;
 
-  console.log(rootPagination);
-
   if (parseInt(totalItems) < 20) return (rootPagination.innerHTML = "");
 
   const instance = new Pagination(rootPagination, {
