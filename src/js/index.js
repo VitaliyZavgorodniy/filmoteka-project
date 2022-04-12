@@ -13,19 +13,20 @@ import { fetchLibrary } from "./services/serviceDatabase";
 import { initHome } from "./pages/home";
 import { checkToken } from "./utils/checkToken";
 
-const initIndex = async () => {
-  await fetchGenres().then((res) => {
-    store.genresList = res;
-  });
+const initIndex = () => {
+  fetchGenres()
+    .then((res) => {
+      store.genresList = res;
+    })
+    .then(() => {
+      if (checkToken()) {
+        const { uid } = JSON.parse(localStorage.getItem("user"));
 
-  if (checkToken()) {
-    const { uid } = JSON.parse(localStorage.getItem("user"));
+        fetchLibrary(uid).then((res) => (store.watched = res));
+      }
 
-    await fetchLibrary(uid).then((res) => (store.watched = res));
-  }
-
-  await initHome();
+      initHome();
+    });
 };
 
 initIndex();
-
