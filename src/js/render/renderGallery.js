@@ -27,7 +27,7 @@ export const renderGallery = (list) => {
         return `<li class="card" data-id="${id}">
                   <img
                     class="card__thumb"
-                    src="https://themoviedb.org/t/p/w440_and_h660_face${poster_path}"
+                    src="https://themoviedb.org/t/p/w342${poster_path}"
                     alt="${title}"
                     loading="lazy"
                     data-id="${id}"

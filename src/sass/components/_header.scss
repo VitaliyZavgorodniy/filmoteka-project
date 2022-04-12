@@ -11,12 +11,17 @@
     width: 100%;
     max-width: 1024px;
     height: 230px;
-    padding: 0 32px;
+    padding: 0 20px;
     background-color: #000;
     background-image: url("../assets/images/header-mob-1x.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @include breakpoint(tablet) {
+      padding: 0 32px;
+      height: 216px;
+    }
 
     @media (min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
@@ -74,6 +79,10 @@
   max-width: 1024px;
   margin-top: 40px;
 
+  @include breakpoint(desktop) {
+    margin-top: 45px;
+  }
+
   &__menu {
     display: flex;
     align-items: center;
@@ -116,15 +125,22 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 54px;
+  margin-top: 50px;
+
+  @include breakpoint(desktop) {
+    margin-top: 42px;
+  }
 }
 
 .search-form {
   @include animate-active();
-
   position: relative;
   display: flex;
-  width: 336px;
+  width: 280px;
+
+  @include breakpoint(tablet) {
+    width: 336px;
+  }
 
   &__input {
     width: 100%;

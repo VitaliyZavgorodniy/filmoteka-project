@@ -1,15 +1,22 @@
 .details-popup {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
+  margin: 20px;
+  padding: 48px 20px;
   background-color: #fff;
 
   @include breakpoint(tablet) {
     flex-direction: row;
     align-items: flex-start;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 704px;
+    margin: 0;
     padding: 40px 36px;
   }
 
@@ -17,6 +24,7 @@
     flex-direction: row;
     align-items: flex-start;
     width: 814px;
+
     padding: 40px 16px;
   }
 
@@ -31,15 +39,22 @@
     }
 
     @include breakpoint(desktop) {
-      width: 375px;
-      height: 478px;
+      min-width: 375px;
+      max-width: 374px;
+      height: auto;
     }
+  }
+
+  &__preview img {
+    display: block;
   }
 
   &__info {
     margin-left: 0;
+    margin-top: 20px;
 
     @include breakpoint(tablet) {
+      margin-top: 0;
       margin-left: 68px;
     }
 
@@ -76,9 +91,8 @@
   }
 
   &__close-icon {
-    width: 40px;
-    height: 40px;
-    // fill: #000;
+    width: 26px;
+    height: 26px;
   }
 }
 
@@ -138,6 +152,7 @@
   line-height: 1.16;
   font-size: 20px;
   font-weight: 500;
+  text-transform: uppercase;
   @media screen and (min-width: 1024px) {
     font-size: 30px;
   }

@@ -31,13 +31,11 @@ export const renderDetails = (movie) => {
           data-action="close-modal"
         </img>  
       </button>
-
       <img 
-        src="https://themoviedb.org/t/p/w440_and_h660_face${poster_path}" 
-        alt="${original_title}" 
-        class="details-popup__preview" 
+          class="details-popup__preview" 
+          src="https://themoviedb.org/t/p/w500${poster_path}" 
+          alt="${original_title}" 
       />
-
       <div class="details-popup__info">
         <div class="movie-wrapper">
           <p class="modal__title">${original_title}</p>

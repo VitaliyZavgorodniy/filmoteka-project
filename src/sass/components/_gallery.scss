@@ -6,34 +6,56 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   max-width: 1024px;
+  padding: 20px;
+
+  @include breakpoint(tablet) {
+    padding: 60px 32px;
+  }
+
+  @include breakpoint(desktop) {
+  }
 }
 
 .card {
-  &:hover {
-    cursor: pointer;
-  }
-  @media screen and (max-width: 767px) {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
+  margin-bottom: 20px;
+
+  @include breakpoint(desktop) {
+    margin-bottom: 32px;
   }
 
-  @media screen and (min-width: 768px) {
-    margin: 16px;
+  @include breakpoint(tablet) {
     flex-basis: calc((100% - (2 * 32px)) / 2);
   }
 
-  @media screen and (min-width: 1024px) {
-    margin: 8px;
+  @include breakpoint(desktop) {
     flex-basis: calc((100% - (3 * 16px)) / 3);
+  }
+
+  &:last-child {
+    margin-left: none;
+  }
+
+  &:hover {
+    cursor: pointer;
   }
 
   &__thumb {
     margin-bottom: 10px;
     border-radius: 5px;
-    width: 100%;
-    // overflow: hidden;
+    width: 280px;
+    height: 402px;
+
+    @include breakpoint(tablet) {
+      width: 336px;
+      height: 455px;
+    }
+
+    @include breakpoint(desktop) {
+      height: 449px;
+      width: 309px;
+    }
   }
 
   &__title {
@@ -51,50 +73,50 @@
 }
 
 // Skeletons for Movie Cards loading
-// .skeleton {
-//   z-index: 2;
-//   opacity: 0.7;
-//   animation: skeleton-loading 1s linear infinite alternate;
+.skeleton {
+  z-index: 2;
+  opacity: 0.7;
+  animation: skeleton-loading 1s linear infinite alternate;
 
-//   &__card {
-//     display: flex;
-//     flex-direction: column;
-//     flex-basis: 33%;
-//     min-height: 489px;
-//     border-radius: 5px;
-//     margin-bottom: 32px;
-//     padding: 10px;
-//     border: solid 0.5px grayscale($color: #edeaea);
-//     background-color: white;
-//     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-//       1px 4px 6px rgba(0, 0, 0, 0.06);
+  &__card {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33%;
+    min-height: 489px;
+    border-radius: 5px;
+    margin-bottom: 32px;
+    padding: 10px;
+    border: solid 0.5px grayscale($color: #edeaea);
+    background-color: white;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.06);
 
-//     &:nth-child(3n + 3) {
-//       margin-right: 0px;
-//     }
-//   }
+    &:nth-child(3n + 3) {
+      margin-right: 0px;
+    }
+  }
 
-//   &__image {
-//     min-height: 449px;
-//     background-color: grayscale($color: #edeaea);
-//     border: 0px;
-//   }
+  &__image {
+    min-height: 449px;
+    background-color: grayscale($color: #edeaea);
+    border: 0px;
+  }
 
-//   &__title {
-//     min-height: 30px;
-//     background: grayscale($color: #edeaea);
-//     margin-top: 10px;
-//     border-radius: 5px;
-//   }
+  &__title {
+    min-height: 30px;
+    background: grayscale($color: #edeaea);
+    margin-top: 10px;
+    border-radius: 5px;
+  }
 
-//   &__subtitle {
-//     min-height: 30px;
-//     width: 70%;
-//     background: grayscale($color: #edeaea);
-//     margin-top: 10px;
-//     border-radius: 5px;
-//   }
-// }
+  &__subtitle {
+    min-height: 30px;
+    width: 70%;
+    background: grayscale($color: #edeaea);
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+}
 
 .title-sceleton {
   min-height: 30px;
