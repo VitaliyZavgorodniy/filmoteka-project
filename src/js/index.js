@@ -29,4 +29,4 @@ const initIndex = () => {
     });
 };
 
-initIndex();
+// initIndex();
