@@ -40,7 +40,7 @@
 
     @include breakpoint(desktop) {
       min-width: 375px;
-      max-width: 374px;
+      min-height: 400px;
       height: auto;
     }
   }
@@ -148,6 +148,7 @@
 }
 
 .modal__title {
+  min-height: 20px;
   margin-bottom: 20px;
   line-height: 1.16;
   font-size: 20px;
@@ -242,10 +243,6 @@ tbody {
   line-height: 1.6;
 }
 
-// .movie-card {
-//   display: flex;
-//   flex-direction: row;
-// }
 
 .movie-content {
   display: flex;

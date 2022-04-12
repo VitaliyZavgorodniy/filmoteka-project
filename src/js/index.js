@@ -27,5 +27,5 @@ const initIndex = async () => {
   await initHome();
 };
 
-// initIndex();
+initIndex();
 
