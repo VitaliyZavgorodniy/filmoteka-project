@@ -6,11 +6,12 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 1024px;
   padding: 20px;
 
   @include breakpoint(tablet) {
+    justify-content: space-between;
     padding: 60px 32px;
   }
 
@@ -21,12 +22,9 @@
 .card {
   margin-bottom: 20px;
 
-  @include breakpoint(desktop) {
-    margin-bottom: 32px;
-  }
-
   @include breakpoint(tablet) {
     flex-basis: calc((100% - (2 * 32px)) / 2);
+    margin-bottom: 32px;
   }
 
   @include breakpoint(desktop) {
@@ -140,5 +138,3 @@
 //   opacity: 0.7;
 //   animation: skeleton-loading 1s linear infinite alternate;
 // }
-
-

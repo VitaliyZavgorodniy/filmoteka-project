@@ -12,7 +12,7 @@ export const store = {
     rootMenu: document.querySelector(".navigation__menu"),
     rootLibsMenu: document.querySelector(".library-menu"),
     btnsLibs: document.querySelectorAll(".library-menu__button"),
-    refsLink: document.querySelectorAll(".navigation__link"),
+    refsLink: document.querySelectorAll("[data-action='go-page']"),
     refSearchform: document.querySelector('[data-root="search-bar"]'),
     refLibsSelect: document.querySelector('[data-root="library-buttons"]'),
     refLoginHeader: document.querySelector('[data-root="header-login"]'),

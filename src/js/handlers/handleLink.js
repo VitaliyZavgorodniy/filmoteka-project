@@ -7,13 +7,15 @@ import { initLibrary } from "../pages/library";
 
 export const handleLink = (e) => {
   e.preventDefault();
-  
+
   const link = e.currentTarget;
-  const value = link.getAttribute("data-page");
+  const value = link.getAttribute("href");
 
   clearActive(store.refs.rootMenu);
 
-  link.classList.add("active");
+  store.refs.rootMenu
+    .querySelector(`[href="${value}"]`)
+    .classList.add("active");
 
   if (value === "home") {
     renderSearchForm();
