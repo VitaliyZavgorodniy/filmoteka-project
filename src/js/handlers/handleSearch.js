@@ -8,9 +8,13 @@ const handleSearch = (e) => {
     elements: { searchQuery },
   } = e.target;
 
-  store.mode = "search";
+  const query = searchQuery.value.trim();
 
-  handleGallery("find", 1, searchQuery.value);
+  if (query) {
+    store.mode = "search";
+    store.query = query;
+    handleGallery("find", 1, searchQuery.value);
+  }
 };
 
 store.refs.refSearchform.addEventListener("submit", handleSearch);

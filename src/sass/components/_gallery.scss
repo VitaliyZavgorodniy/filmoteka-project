@@ -9,13 +9,12 @@
   justify-content: center;
   max-width: 1024px;
   padding: 20px;
+  padding-bottom: 0;
 
   @include breakpoint(tablet) {
     justify-content: space-between;
     padding: 60px 32px;
-  }
-
-  @include breakpoint(desktop) {
+    padding-bottom: 0;
   }
 }
 
