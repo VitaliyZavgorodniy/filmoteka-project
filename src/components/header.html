@@ -10,12 +10,20 @@
 
       <ul class="navigation__menu">
         <li class="navigation__item">
-          <a class="navigation__link active" data-action="go-page" data-page="home" href="#"
+          <a
+            class="navigation__link active"
+            data-action="go-page"
+            data-page="home"
+            href="#"
             >Home</a
           >
         </li>
         <li class="navigation__item">
-          <a class="navigation__link" data-action="go-page" data-page="library" href="#"
+          <a
+            class="navigation__link"
+            data-action="go-page"
+            data-page="library"
+            href="#"
             >My library</a
           >
         </li>
@@ -24,6 +32,7 @@
 
     <div class="control-bar">
       <form class="search-form active" data-root="search-bar">
+        <label for="searchQuery" class="visually-hidden"></label>
         <input
           name="searchQuery"
           type="text"
@@ -35,6 +44,7 @@
           <svg class="search-form__icon">
             <use href="./assets/icons/sprite.svg#icon-search-2"></use>
           </svg>
+          <span class="visually-hidden">Search</span>
         </button>
       </form>
 
