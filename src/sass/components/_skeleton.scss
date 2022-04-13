@@ -8,6 +8,10 @@
     margin-top: 0;
   }
 
+  &_image {
+    min-height: 300px;
+  }
+
   &_text {
     min-height: 14px;
     animation: skeleton-loading-text 1s linear infinite alternate;

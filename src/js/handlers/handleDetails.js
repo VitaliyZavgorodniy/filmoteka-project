@@ -8,7 +8,7 @@ export const openDetails = (e) => {
   if (!index) return;
 
   renderSkeletonDetails();
-  
+
   const { rootDetails } = store.refs;
   rootDetails.classList.remove("is-hidden");
 
