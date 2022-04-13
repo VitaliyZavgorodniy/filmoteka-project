@@ -38,5 +38,5 @@ export const renderGallery = (list) => {
     .join("");
 
   rootGallery.innerHTML = "";
-  rootGallery.insertAdjacentHTML("beforebegin", markup);
+  rootGallery.insertAdjacentHTML("afterbegin", markup);
 };

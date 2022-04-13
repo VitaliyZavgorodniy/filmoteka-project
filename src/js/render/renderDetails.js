@@ -33,7 +33,7 @@ export const renderDetails = (movie) => {
   );
 
   rootDetails.innerHTML = "";
-  rootDetails.insertAdjacentHTML("beforebegin", markup);
+  rootDetails.insertAdjacentHTML("afterbegin", markup);
 
   if (checkToken()) {
     renderWatchButton(movie);

@@ -5,5 +5,5 @@ export const renderSkeletonGallery = () => {
   const { rootGallery } = store.refs;
 
   rootGallery.innerHTML = "";
-  rootGallery.insertAdjacentHTML("beforebegin", templateCardSkeleton());
+  rootGallery.insertAdjacentHTML("afterbegin", templateCardSkeleton());
 };

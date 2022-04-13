@@ -5,5 +5,5 @@ export const renderEmptyGallery = () => {
   const { rootGallery } = store.refs;
 
   rootGallery.innerHTML = "";
-  rootGallery.insertAdjacentHTML("beforebegin", templateGalleryEmpty());
+  rootGallery.insertAdjacentHTML("afterbegin", templateGalleryEmpty());
 };

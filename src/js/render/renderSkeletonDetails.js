@@ -5,5 +5,5 @@ export const renderSkeletonDetails = () => {
   const { rootDetails } = store.refs;
 
   rootDetails.innerHTML = "";
-  rootDetails.insertAdjacentHTML("beforebegin", templateDetailsSkeleton());
+  rootDetails.insertAdjacentHTML("afterbegin", templateDetailsSkeleton());
 };
