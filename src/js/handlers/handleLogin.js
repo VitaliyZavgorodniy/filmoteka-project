@@ -1,6 +1,6 @@
 import { store } from "../store";
 import { loginGoogle } from "../services/serviceAuth";
-import { renderLibsSelector } from "../render/renderLibsSelector";
+import { showLibSelector } from "../handlers/showLibSelector";
 import { initLibrary } from "../pages/library";
 import { fetchLibrary } from "../services/serviceDatabase";
 
@@ -14,7 +14,7 @@ export const handleLogin = () =>
       fetchLibrary(uid, "queue").then((res) => (store.queue = res));
       fetchLibrary(uid, "watched").then((res) => (store.watched = res));
 
-      renderLibsSelector();
+      showLibSelector();
       initLibrary();
     }
   });

@@ -1,7 +1,9 @@
 import { store } from "../store";
+import { templateGalleryEmpty } from "../templates/templateGalleryEmpty";
 
 export const renderEmptyGallery = () => {
-  store.refs.rootGallery.innerHTML = `
-    <h1>Nothing to show</h1>
-  `;
+  const { rootGallery } = store.refs;
+
+  rootGallery.innerHTML = "";
+  rootGallery.insertAdjacentHTML("beforebegin", templateGalleryEmpty());
 };

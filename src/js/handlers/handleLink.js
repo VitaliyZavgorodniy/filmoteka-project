@@ -1,7 +1,7 @@
 import { store } from "../store";
 import { clearActive } from "../utils/clearClasses";
-import { renderSearchForm } from "../render/renderSearchForm";
-import { renderLibsSelector } from "../render/renderLibsSelector";
+import { showSearchForm } from "../handlers/showSearchForm";
+import { showLibSelector } from "../handlers/showLibSelector";
 import { initHome } from "../pages/home";
 import { initLibrary } from "../pages/library";
 
@@ -19,13 +19,13 @@ export const handleLink = (e) => {
     .classList.add("active");
 
   if (value === "home") {
-    renderSearchForm();
+    showSearchForm();
     initHome();
     rootHeader.classList.remove("header__container_library");
     rootHeader.classList.add("header__container_home");
   }
   if (value === "library") {
-    renderLibsSelector();
+    showLibSelector();
     initLibrary();
     rootHeader.classList.add("header__container_library");
     rootHeader.classList.remove("header__container_home");

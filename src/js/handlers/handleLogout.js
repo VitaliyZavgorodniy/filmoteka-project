@@ -1,12 +1,12 @@
 import { store } from "../store";
-import { renderLibsSelector } from "../render/renderLibsSelector";
+import { showLibSelector } from "../handlers/showLibSelector";
 import { initLibrary } from "../pages/library";
 
 export const handleLogout = () => {
   localStorage.removeItem("user");
   store.user = null;
 
-  renderLibsSelector();
+  showLibSelector();
   initLibrary();
 };
 

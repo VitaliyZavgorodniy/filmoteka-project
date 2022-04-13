@@ -5,14 +5,14 @@ import {
   removeFromLibrary,
 } from "../services/serviceDatabase";
 import { checkInLib } from "../utils/checkInLib";
-import { renderSpinner } from "./renderSpinner";
+import { templateSpinner } from "../templates/templateSpinner";
 import { loginGoogle } from "../services/serviceAuth";
 
 import iconGoogleLogo from "../../assets/icons/google-logo.svg";
 
 export const renderWatchButton = (movie) => {
   const buttonRoot = document.querySelector('[data-root="watched"]');
-  buttonRoot.innerHTML = renderSpinner();
+  buttonRoot.innerHTML = templateSpinner();
   const { id } = movie;
   const { uid } = store.user;
 
@@ -61,7 +61,7 @@ export const renderWatchButton = (movie) => {
 
 export const renderQueueButton = (movie) => {
   const buttonRoot = document.querySelector('[data-root="queue"]');
-  buttonRoot.innerHTML = renderSpinner();
+  buttonRoot.innerHTML = templateSpinner();
   const { id } = movie;
   const { uid } = store.user;
 
