@@ -40,9 +40,18 @@
   }
 
   &__thumb {
+    height: 402px;
     margin-bottom: 10px;
     border-radius: 5px;
     overflow: hidden;
+
+    @include breakpoint(tablet) {
+      height: 455px;
+    }
+
+    @include breakpoint(desktop) {
+      height: 449px;
+    }
   }
 
   &__image {
