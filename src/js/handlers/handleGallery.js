@@ -1,11 +1,6 @@
 import { store } from "../store";
 
-import {
-  fetchGenres,
-  fetchTrending,
-  fetchSearch,
-  fetchSingleMovie,
-} from "../services/serviceMoviesAPI";
+import { fetchTrending, fetchSearch } from "../services/serviceMoviesAPI";
 import { fetchLibrary } from "../services/serviceDatabase";
 
 import { renderGallery } from "../render/renderGallery";
