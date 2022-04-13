@@ -9,11 +9,12 @@ import "./handlers/handleDetails";
 
 import { fetchGenres } from "./services/serviceMoviesAPI";
 import { initHome } from "./pages/home";
+import { checkToken } from "./utils/checkToken";
 
 (async () => {
   const genres = await fetchGenres();
-
   store.genresList = genres;
 
+  checkToken();
   initHome();
 })();
