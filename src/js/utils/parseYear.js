@@ -1,1 +1,4 @@
-export const parseYear = (date) => parseInt(date);
+export const parseYear = (date) => {
+  if (date) return parseInt(date);
+  else return "no date";
+};
