@@ -9,13 +9,13 @@ export const handleLink = (e) => {
   e.preventDefault();
 
   const link = e.currentTarget;
-  const value = link.getAttribute("href");
+  const value = link.getAttribute("link");
 
   const { rootHeader, rootMenu } = store.refs;
   clearActive(rootMenu);
 
   store.refs.rootMenu
-    .querySelector(`[href="${value}"]`)
+    .querySelector(`[link="${value}"]`)
     .classList.add("active");
 
   if (value === "home") {
