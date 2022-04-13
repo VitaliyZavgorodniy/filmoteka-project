@@ -90,7 +90,7 @@
   &__text {
     display: none;
     margin-left: 10px;
-    @include font(500, 30px, 35px, #fff);
+    @include font(500, 30px, 35px, #fff, 0);
 
     @include breakpoint(tablet) {
       display: inline-flex;
