@@ -8,25 +8,12 @@ import "./handlers/handleSearch";
 import "./handlers/handleDetails";
 
 import { fetchGenres } from "./services/serviceMoviesAPI";
-import { fetchLibrary } from "./services/serviceDatabase";
-
 import { initHome } from "./pages/home";
-import { checkToken } from "./utils/checkToken";
 
-const initIndex = () => {
-  fetchGenres()
-    .then((res) => {
-      store.genresList = res;
-    })
-    .then(() => {
-      if (checkToken()) {
-        const { uid } = JSON.parse(localStorage.getItem("user"));
+(async () => {
+  const genres = await fetchGenres();
 
-        fetchLibrary(uid).then((res) => (store.watched = res));
-      }
+  store.genresList = genres;
 
-      initHome();
-    });
-};
-
-initIndex();
+  initHome();
+})();
