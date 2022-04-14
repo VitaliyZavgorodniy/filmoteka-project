@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
-$ff-main: "Roboto", sans-serif;
+$ff-main: 'Roboto', sans-serif;
 $fs-link: 12px;
 $secondary-color: #545454;
 $accent-color: #ff6b08;
@@ -14,5 +14,6 @@ $accent-shadow: rgba(255, 107, 1, 0.6);
 $grey-shadow: 0px 0px 4px 1px #f7f7f7;
 $bg-gradient: linear-gradient(#00000056, #00000056);
 
-$bezier-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+$animation-duration: 250ms;
+$bezier-transition: cubic-bezier(0.4, 0, 0.2, 1);
 $ease-transition: 250ms ease-in-out;
