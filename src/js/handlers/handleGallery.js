@@ -17,7 +17,7 @@ export const handleGallery = (mode, page) => {
   if (mode === 'trend' || mode === 'find') {
     const fetchMethod = mode === 'find' ? fetchSearch : fetchTrending;
 
-    fetchMethod(page, query).then(res => {
+    fetchMethod(page, query).then((res) => {
       const { list, totalItems } = res;
 
       if (page == 1) renderPagination(totalItems);
@@ -28,6 +28,6 @@ export const handleGallery = (mode, page) => {
   if (mode === 'watched' || mode === 'queue') {
     const uid = store.user.uid;
     renderPagination();
-    fetchLibrary(uid, mode).then(res => renderGallery(res));
+    fetchLibrary(uid, mode).then((res) => renderGallery(res));
   }
 };

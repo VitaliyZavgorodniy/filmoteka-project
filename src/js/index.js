@@ -24,6 +24,11 @@ import { initPageLayout } from './handlers/handleLink';
 
   if (!pageState) {
     initHome();
+  }
+
+  if (pageState === 'trend') {
+    initPageLayout('home');
+    initLibraryMode(pageState, 1);
   } else {
     initPageLayout('library');
     initLibraryMode(pageState, 1);
