@@ -8,13 +8,16 @@
 @import "./utils/scroll-bar.scss";
 
 @import "./components/container.scss";
+@import "./components/spinner.scss";
 @import "./components/pagination.scss";
-@import "./components/header.scss";
 @import "./components/buttons.scss";
-@import "./components/library-buttons.scss";
 @import "./components/skeleton.scss";
+@import "./components/library-buttons.scss";
+
+@import "./components/backdrop.scss";
+@import "./components/modals.scss";
+@import "./components/modal-details.scss";
+
+@import "./components/header.scss";
 @import "./components/gallery.scss";
 @import "./components/footer.scss";
-@import "./components/backdrop.scss";
-@import "./components/modal-details.scss";
-@import "./components/spinner.scss";

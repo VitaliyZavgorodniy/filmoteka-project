@@ -25,8 +25,6 @@ export const renderGallery = (list) => {
 
         const releaseYear = parseYear(release_date);
 
-        console.log(list);
-
         return templateCard(
           id,
           poster_path,
