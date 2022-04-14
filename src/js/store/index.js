@@ -21,3 +21,5 @@ export const store = {
     btnLogout: document.querySelector('[data-action="logout"]'),
   },
 };
+
+export const PAGE_STATE_KEY = 'pageState';
