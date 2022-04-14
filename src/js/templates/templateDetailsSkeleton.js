@@ -1,10 +1,10 @@
 import iconCloseButton from "../../assets/icons/close.svg";
 
 export const templateDetailsSkeleton = () => `
-  <div class="details-popup">
-    <button class="details-popup__close-btn" type="button" data-modal-close data-action="close-modal">
+  <div class="modal">
+    <button class="close-modal-button" type="button" data-modal-close data-action="close-modal">
       <img 
-        class="details-popup__close-icon"
+        class="close-modal-button__icon"
         src=${iconCloseButton}
         alt="close"
         data-action="close-modal"

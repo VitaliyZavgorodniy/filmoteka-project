@@ -5,7 +5,7 @@ import { parseYear } from "../utils/parseYear";
 import { templateCard } from "../templates/templateCard";
 
 export const renderGallery = (list) => {
-  const { genresList } = store;
+  const { genresList, mode } = store;
   const { rootGallery } = store.refs;
 
   const markup = list
@@ -25,13 +25,16 @@ export const renderGallery = (list) => {
 
         const releaseYear = parseYear(release_date);
 
+        console.log(list);
+
         return templateCard(
           id,
           poster_path,
           title,
           genresInfo,
           releaseYear,
-          vote_average
+          vote_average,
+          mode === "watched" || mode === "queue"
         );
       }
     )

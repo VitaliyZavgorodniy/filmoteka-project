@@ -9,51 +9,54 @@ export const templateDetails = (
   genres,
   overview
 ) => `
-  <div class="details-popup">
-      <button class="details-popup__close-btn" type="button" data-modal-close data-action="close-modal">
-        <img 
-          class="details-popup__close-icon"
-          src=${iconCloseButton}
-          alt="close"
-          data-action="close-modal"
-        </img>  
-      </button>
+  <div class="modal">
+    <button class="close-modal-button" type="button" data-modal-close data-action="close-modal">
       <img 
-          class="details-popup__preview" 
-          src="https://themoviedb.org/t/p/w500${poster_path}" 
-          alt="${original_title}" 
-      />
-      <div class="details-popup__info">
-        <div class="movie-wrapper">
-          <p class="modal__title">${original_title}</p>
-          <table class="modal-table">
-            <tr class="modal-table__row">
-              <td class="modal-table__title">Vote / Votes</td>
-              <td class="modal-table__desc">
-                <span class="modal-table__vote">${vote_average}</span> /
-                <span class="modal-table__votes">${vote_count}</span>
-              </td>
-            </tr>
-            <tr class="modal-table__row">
-              <td class="modal-table__title">Popularity</td>
-              <td class="modal-table__desc">${popularity}</td>
-            </tr>
-            <tr class="modal-table__row">
-              <td class="modal-table__title">Original Title</td>
-              <td class="modal-table__desc">${original_title}</td>
-            </tr>
-            <tr class="modal-table__row">
-              <td class="modal-table__title">Genre</td>
-              <td class="modal-table__desc">${genres}</td>
-            </tr>
-          </table>
-          <p class="modal__subtitle">About</p>
-          <p class="modal__desc">
-            ${overview}
-          </p>
-        </div>
+        class="close-modal-button__icon"
+        src=${iconCloseButton}
+        alt="close"
+        data-action="close-modal"
+      </img>  
+    </button>
+    <div class="details-popup">
+      <div class="details-popup__thumb">
+        <img 
+            src="https://themoviedb.org/t/p/w500${poster_path}" 
+            alt="${original_title}" 
+        />
+      </div>
 
-        <ul class="details-popup__menu">
+      <div class="details-popup__info">
+        <h2 class="details-popup__title">${original_title}</h2>
+
+        <table class="ranks-table details-popup__block">
+          <tr>
+            <th class="ranks-table__head">Vote / Votes</th>
+            <td class="ranks-table__cell">
+              <span class="rating rating_accent">${vote_average}</span> /
+              <span class="rating">${vote_count}</span>
+            </td>
+          </tr>
+          <tr>
+            <th class="ranks-table__head">Popularity</th>
+            <td class="ranks-table__cell">${popularity}</td>
+          </tr>
+          <tr>
+            <th class="ranks-table__head">Original Title</th>
+            <td class="ranks-table__cell">${original_title}</td>
+          </tr>
+          <tr>
+            <th class="ranks-table__head">Genre</th>
+            <td class="ranks-table__cell">${genres}</td>
+          </tr>
+        </table>
+
+        <p class="details-popup__subtitle details-popup__block">About</p>
+        <p class="details-popup__description details-popup__block">
+          ${overview}
+        </p>
+
+        <ul class="details-popup__menu details-popup__block">
           <li class="details-popup__menu_item" data-root="watched">
           
           </li>
@@ -62,5 +65,6 @@ export const templateDetails = (
           </li>
         </ul>
       </div>
+    </div>
   </div>
 `;

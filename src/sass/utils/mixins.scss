@@ -4,7 +4,7 @@
   align-items: $align;
 }
 
-@mixin font($fw, $fs, $lh, $fc: #000, $ls: 0.03em) {
+@mixin font($fw, $fs, $lh, $fc: #000, $ls: 0) {
   font-weight: $fw;
   font-size: $fs;
   line-height: $lh / $fs;
