@@ -25,3 +25,17 @@
     margin-right: 5px;
   }
 }
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header, .footer {
+  flex: 0 1 auto;
+}
+
+.section, .pagination {
+  flex: 1;
+}
