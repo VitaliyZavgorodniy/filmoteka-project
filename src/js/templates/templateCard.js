@@ -10,13 +10,20 @@ export const templateCard = (
   <li class="gallery__item">
     <div class="card" data-id="${id}">
       <div class="card__thumb" data-id="${id}"> 
-        <img
-          class="card__image"
-          src="https://themoviedb.org/t/p/w342${poster_path}"
-          alt="${title}"
-          loading="lazy"
-          data-id="${id}"
-        >
+        <picture class="card__image" data-id="${id}">
+          <source 
+            srcset="https://themoviedb.org/t/p/w342${poster_path}"
+            media="(min-width: 1024px)">
+          <source 
+            srcset="https://themoviedb.org/t/p/w342${poster_path}"
+            media="(min-width: 768px)">
+          <img 
+            data-id="${id}"
+            alt="${title}"
+            loading="lazy"
+            src="https://themoviedb.org/t/p/w185${poster_path}"
+          />
+        </picture>
       </div>
       <h4 class="card__title" data-id="${id}">${title}</h4>
       <p class="card__text" data-id="${id}">

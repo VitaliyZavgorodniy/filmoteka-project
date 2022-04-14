@@ -20,10 +20,19 @@ export const templateDetails = (
     </button>
     <div class="details-popup">
       <div class="details-popup__thumb">
-        <img 
-            src="https://themoviedb.org/t/p/w500${poster_path}" 
+        <picture class="card__image">
+          <source 
+            srcset="https://themoviedb.org/t/p/w500${poster_path}"
+            media="(min-width: 1024px)">
+          <source 
+            srcset="https://themoviedb.org/t/p/w342${poster_path}"
+            media="(min-width: 768px)">
+          <img 
             alt="${original_title}" 
-        />
+            loading="lazy"
+            src="https://themoviedb.org/t/p/w342${poster_path}"
+          />
+        </picture>
       </div>
 
       <div class="details-popup__info">
