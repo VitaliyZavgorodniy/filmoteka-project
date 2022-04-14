@@ -1,14 +1,14 @@
-import { store } from "../store";
-import { closeDetails } from "../handlers/handleDetails";
+import { store } from '../store';
+import { closeDetails } from '../handlers/handleDetails';
 import {
   renderWatchButton,
   renderQueueButton,
   renderLoginButton,
-} from "./renderDetailsButtons";
-import { checkToken } from "../utils/checkToken";
-import { joinGenres } from "../utils/joinGenres";
+} from './renderDetailsButtons';
+import { checkToken } from '../utils/checkToken';
+import { joinGenres } from '../utils/joinGenres';
 
-import { templateDetails } from "../templates/templateDetails";
+import { templateDetails } from '../templates/templateDetails';
 
 export const renderDetails = (movie) => {
   const { rootDetails } = store.refs;
@@ -32,8 +32,8 @@ export const renderDetails = (movie) => {
     overview
   );
 
-  rootDetails.innerHTML = "";
-  rootDetails.insertAdjacentHTML("afterbegin", markup);
+  rootDetails.innerHTML = '';
+  rootDetails.insertAdjacentHTML('afterbegin', markup);
 
   if (checkToken()) {
     renderWatchButton(movie);
@@ -43,6 +43,6 @@ export const renderDetails = (movie) => {
   }
 
   document
-    .querySelector("[data-modal-close]")
-    .addEventListener("click", closeDetails);
+    .querySelector('[data-modal-close]')
+    .addEventListener('click', closeDetails);
 };

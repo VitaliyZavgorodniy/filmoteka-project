@@ -1,8 +1,8 @@
-import { store } from "../store";
-import { filterGenres } from "../utils/filterGenres";
-import { joinGenres } from "../utils/joinGenres";
-import { parseYear } from "../utils/parseYear";
-import { templateCard } from "../templates/templateCard";
+import { store } from '../store';
+import { filterGenres } from '../utils/filterGenres';
+import { joinGenres } from '../utils/joinGenres';
+import { parseYear } from '../utils/parseYear';
+import { templateCard } from '../templates/templateCard';
 
 export const renderGallery = (list) => {
   const { genresList, mode } = store;
@@ -32,12 +32,12 @@ export const renderGallery = (list) => {
           genresInfo,
           releaseYear,
           vote_average,
-          mode === "watched" || mode === "queue"
+          mode === 'watched' || mode === 'queue'
         );
       }
     )
-    .join("");
+    .join('');
 
-  rootGallery.innerHTML = "";
-  rootGallery.insertAdjacentHTML("afterbegin", markup);
+  rootGallery.innerHTML = '';
+  rootGallery.insertAdjacentHTML('afterbegin', markup);
 };

@@ -1,14 +1,14 @@
-import { store } from "../store";
+import { store } from '../store';
 import {
   fetchLibrary,
   updateLibrary,
   removeFromLibrary,
-} from "../services/serviceDatabase";
-import { checkInLib } from "../utils/checkInLib";
-import { templateSpinner } from "../templates/templateSpinner";
-import { loginGoogle } from "../services/serviceAuth";
+} from '../services/serviceDatabase';
+import { checkInLib } from '../utils/checkInLib';
+import { templateSpinner } from '../templates/templateSpinner';
+import { loginGoogle } from '../services/serviceAuth';
 
-import iconGoogleLogo from "../../assets/icons/google-logo.svg";
+import iconGoogleLogo from '../../assets/icons/google-logo.svg';
 
 export const renderWatchButton = (movie) => {
   const buttonRoot = document.querySelector('[data-root="watched"]');
@@ -16,7 +16,7 @@ export const renderWatchButton = (movie) => {
   const { id } = movie;
   const { uid } = store.user;
 
-  fetchLibrary(uid, "watched").then((res) => {
+  fetchLibrary(uid, 'watched').then((res) => {
     const isWatched = checkInLib(id, res);
 
     if (isWatched) {
@@ -31,9 +31,9 @@ export const renderWatchButton = (movie) => {
         `;
 
       document
-        .querySelector("[data-remove-watched]")
-        .addEventListener("click", () =>
-          removeFromLibrary(uid, movie, "watched").then(() =>
+        .querySelector('[data-remove-watched]')
+        .addEventListener('click', () =>
+          removeFromLibrary(uid, movie, 'watched').then(() =>
             renderWatchButton(movie)
           )
         );
@@ -49,9 +49,9 @@ export const renderWatchButton = (movie) => {
         `;
 
       document
-        .querySelector("[data-add-watched]")
-        .addEventListener("click", () =>
-          updateLibrary(uid, movie, "watched").then(() =>
+        .querySelector('[data-add-watched]')
+        .addEventListener('click', () =>
+          updateLibrary(uid, movie, 'watched').then(() =>
             renderWatchButton(movie)
           )
         );
@@ -65,7 +65,7 @@ export const renderQueueButton = (movie) => {
   const { id } = movie;
   const { uid } = store.user;
 
-  fetchLibrary(uid, "queue").then((res) => {
+  fetchLibrary(uid, 'queue').then((res) => {
     const isQueued = checkInLib(id, res);
 
     if (isQueued) {
@@ -80,9 +80,9 @@ export const renderQueueButton = (movie) => {
         `;
 
       document
-        .querySelector("[data-remove-queue]")
-        .addEventListener("click", () =>
-          removeFromLibrary(uid, movie, "queue").then(() =>
+        .querySelector('[data-remove-queue]')
+        .addEventListener('click', () =>
+          removeFromLibrary(uid, movie, 'queue').then(() =>
             renderQueueButton(movie)
           )
         );
@@ -98,9 +98,9 @@ export const renderQueueButton = (movie) => {
         `;
 
       document
-        .querySelector("[data-add-queue]")
-        .addEventListener("click", () =>
-          updateLibrary(uid, movie, "queue").then(() =>
+        .querySelector('[data-add-queue]')
+        .addEventListener('click', () =>
+          updateLibrary(uid, movie, 'queue').then(() =>
             renderQueueButton(movie)
           )
         );
@@ -109,7 +109,7 @@ export const renderQueueButton = (movie) => {
 };
 
 export const renderLoginButton = (movie) => {
-  const rootButtons = document.querySelector(".details-popup__menu");
+  const rootButtons = document.querySelector('.details-popup__menu');
 
   const markup = `
         <button class="login-button" data-action="login-google-panel">
@@ -124,12 +124,12 @@ export const renderLoginButton = (movie) => {
   rootButtons.innerHTML = markup;
 
   document
-    .querySelector("[data-action=login-google-panel]")
-    .addEventListener("click", () =>
+    .querySelector('[data-action=login-google-panel]')
+    .addEventListener('click', () =>
       loginGoogle().then((res) => {
         if (res.status === 200) {
           const { uid, displayName } = res;
-          localStorage.setItem("user", JSON.stringify({ uid, displayName }));
+          localStorage.setItem('user', JSON.stringify({ uid, displayName }));
           store.user = { uid, displayName };
 
           rootButtons.innerHTML = `

@@ -1,9 +1,9 @@
-import {store} from '../store';
-import {clearActive} from '../utils/clearClasses';
-import {showSearchForm} from '../handlers/showSearchForm';
-import {showLibSelector} from '../handlers/showLibSelector';
-import {initHome} from '../pages/home';
-import {initLibraryMode} from '../pages/library';
+import { store } from '../store';
+import { clearActive } from '../utils/clearClasses';
+import { showSearchForm } from '../handlers/showSearchForm';
+import { showLibSelector } from '../handlers/showLibSelector';
+import { initHome } from '../pages/home';
+import { initLibraryMode } from '../pages/library';
 
 export const handleLink = e => {
   e.preventDefault();
@@ -17,7 +17,7 @@ export const handleLink = e => {
 store.refs.refsLink.forEach(link => link.addEventListener('click', handleLink));
 
 export function initPageLayout(value) {
-  const {rootHeader, rootMenu} = store.refs;
+  const { rootHeader, rootMenu } = store.refs;
   clearActive(rootMenu);
 
   store.refs.rootMenu.querySelector(`[data-page="${value}"]`).classList.add('active');
@@ -35,3 +35,5 @@ export function initPageLayout(value) {
     rootHeader.classList.remove('header__container_home');
   }
 }
+
+store.refs.refsLink.forEach(link => link.addEventListener('click', handleLink));

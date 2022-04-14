@@ -1,10 +1,10 @@
-import "./firebase";
-import firebase from "firebase/app";
-import "firebase/firestore";
+import './firebase';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 const db = firebase.firestore();
 
-export const fetchLibrary = async (uid, type = "watched") => {
+export const fetchLibrary = async (uid, type = 'watched') => {
   const refData = db.collection(type).doc(uid);
 
   try {
@@ -18,7 +18,7 @@ export const fetchLibrary = async (uid, type = "watched") => {
   }
 };
 
-export const updateLibrary = async (uid, data, type = "watched") => {
+export const updateLibrary = async (uid, data, type = 'watched') => {
   const refData = db.collection(type).doc(uid);
 
   try {
@@ -32,7 +32,7 @@ export const updateLibrary = async (uid, data, type = "watched") => {
           .collection(type)
           .doc(uid)
           .set({ list: [data] })
-          .then(() => ({ result: "ok" }));
+          .then(() => ({ result: 'ok' }));
     });
 
     return { status: 200 };
@@ -42,7 +42,7 @@ export const updateLibrary = async (uid, data, type = "watched") => {
   }
 };
 
-export const removeFromLibrary = async (uid, data, type = "watched") => {
+export const removeFromLibrary = async (uid, data, type = 'watched') => {
   const refData = db.collection(type).doc(uid);
 
   try {

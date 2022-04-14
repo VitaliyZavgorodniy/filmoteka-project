@@ -1,8 +1,8 @@
-import {store, PAGE_STATE_KEY} from '../store';
-import {checkToken} from '../utils/checkToken';
-import {handleGallery} from '../handlers/handleGallery';
-import {renderEmptyGallery} from '../render/renderEmptyGallery';
-import {renderPagination} from '../render/renderPagination';
+import { store, PAGE_STATE_KEY } from '../store';
+import { checkToken } from '../utils/checkToken';
+import { handleGallery } from '../handlers/handleGallery';
+import { renderEmptyGallery } from '../render/renderEmptyGallery';
+import { renderPagination } from '../render/renderPagination';
 
 export const initLibrary = () => {
   store.mode = 'watched';
