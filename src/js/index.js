@@ -14,7 +14,7 @@ import { initHome } from './pages/home';
 import { initLibrary } from './pages/library';
 
 (async () => {
-  const { menuLinks } = store.refs;
+  const { menuLinks, homeLink } = store.refs;
 
   const genres = await fetchGenres();
   store.genresList = genres;
