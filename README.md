@@ -1,7 +1,6 @@
-# Filmoteka Project
-
-## Single Page Movie Library
-
+## Filmoteka Project - Single Page Movie Library
+Simple vanilla javascript project. 
+[Livepage](https://vitaliyzavgorodniy.github.io/filmoteka-project/)]
 
 ## Technologies
 Project based on Parcel build tool
