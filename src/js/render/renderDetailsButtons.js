@@ -1,12 +1,15 @@
 import { store } from '../store';
+
 import {
   fetchLibrary,
   updateLibrary,
   removeFromLibrary,
 } from '../services/serviceDatabase';
-import { checkInLib } from '../utils/checkInLib';
-import { templateSpinner } from '../templates/templateSpinner';
 import { loginGoogle } from '../services/serviceAuth';
+
+import { templateSpinner } from '../templates/templateSpinner';
+
+import { checkInLib } from '../utils/checkInLib';
 
 import iconGoogleLogo from '../../assets/icons/google-logo.svg';
 

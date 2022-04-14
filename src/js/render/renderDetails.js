@@ -1,14 +1,16 @@
 import { store } from '../store';
+
 import { closeDetails } from '../handlers/handleDetails';
+
 import {
   renderWatchButton,
   renderQueueButton,
   renderLoginButton,
 } from './renderDetailsButtons';
+import { templateDetails } from '../templates/templateDetails';
+
 import { checkToken } from '../utils/checkToken';
 import { joinGenres } from '../utils/joinGenres';
-
-import { templateDetails } from '../templates/templateDetails';
 
 export const renderDetails = (movie) => {
   const { rootDetails } = store.refs;

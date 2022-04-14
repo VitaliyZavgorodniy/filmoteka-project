@@ -1,8 +1,10 @@
 import { store } from '../store';
+
+import { templateCard } from '../templates/templateCard';
+
 import { filterGenres } from '../utils/filterGenres';
 import { joinGenres } from '../utils/joinGenres';
 import { parseYear } from '../utils/parseYear';
-import { templateCard } from '../templates/templateCard';
 
 export const renderGallery = (list) => {
   const { genresList, mode } = store;

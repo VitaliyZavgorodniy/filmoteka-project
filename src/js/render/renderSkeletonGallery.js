@@ -1,4 +1,5 @@
 import { store } from '../store';
+
 import { templateCardSkeleton } from '../templates/templateCardSkeleton';
 
 export const renderSkeletonGallery = () => {

@@ -1,4 +1,5 @@
 import { store } from '../store';
+
 import { clearActive } from '../utils/clearClasses';
 
 export const showSearchForm = () => {

@@ -1,4 +1,5 @@
 import { store } from '../store';
+
 import { handleGallery } from './handleGallery';
 
 const handleSearch = (e) => {

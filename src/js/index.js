@@ -9,13 +9,29 @@ import './handlers/handleDetails';
 import './handlers/handleBtnUp';
 
 import { fetchGenres } from './services/serviceMoviesAPI';
+
 import { initHome } from './pages/home';
-import { checkToken } from './utils/checkToken';
+import { initLibrary } from './pages/library';
 
 (async () => {
+  const { menuLinks } = store.refs;
+
   const genres = await fetchGenres();
   store.genresList = genres;
 
-  checkToken();
-  initHome();
+  const initPage = localStorage.getItem('page');
+
+  if (initPage) {
+    if (initPage === 'home') initHome();
+    if (initPage === 'library') initLibrary();
+
+    menuLinks.forEach((link) => {
+      if (link.getAttribute('data-page') === initPage)
+        link.classList.add('active');
+      else link.classList.remove('active');
+    });
+  } else {
+    initHome();
+    homeLink.classList.add('active');
+  }
 })();

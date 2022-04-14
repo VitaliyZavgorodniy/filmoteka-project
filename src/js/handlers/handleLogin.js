@@ -1,8 +1,10 @@
 import { store } from '../store';
+
 import { loginGoogle } from '../services/serviceAuth';
+import { fetchLibrary } from '../services/serviceDatabase';
+
 import { showLibSelector } from '../handlers/showLibSelector';
 import { initLibrary } from '../pages/library';
-import { fetchLibrary } from '../services/serviceDatabase';
 
 export const handleLogin = () =>
   loginGoogle().then((res) => {

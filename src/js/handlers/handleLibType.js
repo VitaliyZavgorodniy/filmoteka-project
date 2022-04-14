@@ -1,4 +1,5 @@
 import { store } from '../store';
+
 import { handleGallery } from './handleGallery';
 
 export const handleLibType = (e) => {

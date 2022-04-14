@@ -1,6 +1,7 @@
 import { store } from '../store';
-import { showLibSelector } from '../handlers/showLibSelector';
+
 import { initLibrary } from '../pages/library';
+import { showLibSelector } from '../handlers/showLibSelector';
 
 export const handleLogout = () => {
   localStorage.removeItem('user');

@@ -1,4 +1,5 @@
 import { store } from '../store';
+
 import { templateGalleryEmpty } from '../templates/templateGalleryEmpty';
 
 export const renderEmptyGallery = () => {

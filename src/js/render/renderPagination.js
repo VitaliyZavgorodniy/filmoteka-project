@@ -1,6 +1,8 @@
-import { store } from '../store';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
+
+import { store } from '../store';
+
 import { handleGallery } from '../handlers/handleGallery';
 import { upToTop } from '../handlers/handleBtnUp';
 

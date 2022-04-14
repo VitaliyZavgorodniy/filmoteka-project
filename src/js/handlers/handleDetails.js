@@ -1,5 +1,7 @@
 import { store } from '../store';
+
 import { fetchSingleMovie } from '../services/serviceMoviesAPI';
+
 import { renderDetails } from '../render/renderDetails';
 import { renderSkeletonDetails } from '../render/renderSkeletonDetails';
 
