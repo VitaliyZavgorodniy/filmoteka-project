@@ -143,10 +143,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 50px;
+  margin-top: 50px;
 
   @include breakpoint(desktop) {
-    padding-top: 42px;
+    margin-top: 42px;
   }
 }
 
