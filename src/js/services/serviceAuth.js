@@ -1,6 +1,6 @@
-import firebase from "firebase/app";
-import "firebase/auth";
-import "./firebase";
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import './firebase';
 
 const provider = new firebase.auth.GoogleAuthProvider();
 

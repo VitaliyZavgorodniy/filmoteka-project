@@ -17,7 +17,7 @@ export const renderPagination = (totalItems = 1) => {
     centerAlign: true,
   });
 
-  instance.on('beforeMove', e => {
+  instance.on('beforeMove', (e) => {
     upToTop();
     handleGallery(mode, e.page, store.query);
   });

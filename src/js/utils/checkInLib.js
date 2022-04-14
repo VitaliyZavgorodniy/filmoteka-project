@@ -1,2 +1,1 @@
-export const checkInLib = (index, lib) =>
-  lib.some((item) => item.id === index);
+export const checkInLib = (index, lib) => lib.some((item) => item.id === index);

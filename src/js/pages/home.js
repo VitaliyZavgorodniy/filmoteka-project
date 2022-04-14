@@ -1,8 +1,8 @@
-import { store } from "../store";
-import { handleGallery } from "../handlers/handleGallery";
+import { store } from '../store';
+import { handleGallery } from '../handlers/handleGallery';
 
 export const initHome = () => {
-  store.mode = "trend";
+  store.mode = 'trend';
 
-  handleGallery("trend", 1);
+  handleGallery('trend', 1);
 };

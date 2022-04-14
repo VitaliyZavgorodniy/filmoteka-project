@@ -1,4 +1,4 @@
-import iconCloseButton from "../../assets/icons/close.svg";
+import iconCloseButton from '../../assets/icons/close.svg';
 
 export const templateDetailsSkeleton = () => `
   <div class="modal">
