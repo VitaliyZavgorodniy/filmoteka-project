@@ -7,7 +7,8 @@ export const templateDetails = (
   vote_count,
   popularity,
   genres,
-  overview
+  overview,
+  id
 ) => `
   <div class="modal">
     <button class="close-modal-button" type="button" data-modal-close data-action="close-modal">
@@ -18,8 +19,14 @@ export const templateDetails = (
         data-action="close-modal"
       </img>  
     </button>
+    <div class="trailer-player"></div>
     <div class="details-popup">
       <div class="details-popup__thumb">
+        <button type="button" class="watch-trailer-btn" data-id="${id}">
+          <svg class="watch-trailer-btn__icon" width="70" height="50">
+            <use href="/sprite.1d053e98.svg#icon-youtube"></use>
+          </svg>
+        </button>
         <picture class="card__image">
           <source 
             srcset="https://themoviedb.org/t/p/w500${poster_path}"

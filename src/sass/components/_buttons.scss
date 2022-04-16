@@ -118,3 +118,39 @@
 html {
   scroll-behavior: smooth;
 }
+
+.watch-trailer-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  width: 70px;
+  height: 49px;
+
+  border-radius: 16px;
+  border: solid 1px #f61c0d;
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &:hover {
+    border: solid 1px #ff1100b7;
+  }
+
+  &:hover .watch-trailer-btn__icon {
+    fill: #ff1100b7;
+  }
+  & > .watch-trailer-btn__icon {
+    pointer-events: none;
+  }
+}
+
+.watch-trailer-btn__icon {
+  width: 100px;
+  height: 70px;
+  fill: #f61c0d;
+  transition: fill $animation-duration $bezier-transition;
+}

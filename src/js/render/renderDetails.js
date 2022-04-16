@@ -1,5 +1,5 @@
 import { store } from '../store';
-
+import { openTrailer } from '../handlers/handleTrailer';
 import { closeDetails } from '../handlers/handleDetails';
 
 import {
@@ -22,6 +22,7 @@ export const renderDetails = (movie) => {
     vote_count,
     genres,
     poster_path,
+    id,
   } = movie;
 
   const markup = templateDetails(
@@ -31,7 +32,8 @@ export const renderDetails = (movie) => {
     vote_count,
     popularity,
     joinGenres(genres),
-    overview
+    overview,
+    id
   );
 
   rootDetails.innerHTML = '';
@@ -43,6 +45,8 @@ export const renderDetails = (movie) => {
   } else {
     renderLoginButton(movie);
   }
+
+  openTrailer();
 
   document
     .querySelector('[data-modal-close]')
