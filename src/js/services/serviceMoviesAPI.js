@@ -58,3 +58,12 @@ export const fetchSingleMovie = async (id, language = 'en-US') =>
     })
     .then((res) => ({ ...res.data }))
     .catch((e) => console.error(e));
+
+export const fetchMovieTrailer = async (movieId) => {
+  try {
+    const res = await axios.get(`/movie/${movieId}/videos`);
+    return res.data.results;
+  } catch (e) {
+    return console.error(e);
+  }
+};

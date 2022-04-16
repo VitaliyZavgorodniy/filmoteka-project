@@ -7,6 +7,7 @@ import './handlers/handleLogout';
 import './handlers/handleSearch';
 import './handlers/handleDetails';
 import './handlers/handleBtnUp';
+import './handlers/handleTrailer';
 
 import { fetchGenres } from './services/serviceMoviesAPI';
 
