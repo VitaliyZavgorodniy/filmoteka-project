@@ -11,6 +11,7 @@ import { templateDetails } from '../templates/templateDetails';
 
 import { checkToken } from '../utils/checkToken';
 import { joinGenres } from '../utils/joinGenres';
+import { changeModalLanguage } from '../handlers/changeLanguage';
 
 export const renderDetails = (movie) => {
   const { rootDetails } = store.refs;
@@ -47,4 +48,5 @@ export const renderDetails = (movie) => {
   document
     .querySelector('[data-modal-close]')
     .addEventListener('click', closeDetails);
+  changeModalLanguage()
 };

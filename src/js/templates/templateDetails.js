@@ -40,27 +40,27 @@ export const templateDetails = (
 
         <table class="ranks-table details-popup__block">
           <tr>
-            <th class="ranks-table__head">Vote / Votes</th>
+            <th class="ranks-table__head md-vote-lang">Vote / Votes</th>
             <td class="ranks-table__cell">
               <span class="rating rating_accent">${vote_average}</span> /
               <span class="rating">${vote_count}</span>
             </td>
           </tr>
           <tr>
-            <th class="ranks-table__head">Popularity</th>
+            <th class="ranks-table__head md-popularity-lang">Popularity</th>
             <td class="ranks-table__cell">${popularity}</td>
           </tr>
           <tr>
-            <th class="ranks-table__head">Original Title</th>
+            <th class="ranks-table__head md-title-lang">Original Title</th>
             <td class="ranks-table__cell">${original_title}</td>
           </tr>
           <tr>
-            <th class="ranks-table__head">Genre</th>
+            <th class="ranks-table__head md-genre-lang">Genre</th>
             <td class="ranks-table__cell">${genres}</td>
           </tr>
         </table>
 
-        <p class="details-popup__subtitle details-popup__block">About</p>
+        <p class="details-popup__subtitle details-popup__block md-about-lang">About</p>
         <p class="details-popup__description details-popup__block">
           ${overview}
         </p>

@@ -13,6 +13,11 @@ import { fetchGenres } from './services/serviceMoviesAPI';
 import { initHome } from './pages/home';
 import { initLibrary } from './pages/library';
 
+import { changeLanguage, changeModalLanguage } from './handlers/changeLanguage';
+
+
+
+
 (async () => {
   const { menuLinks, homeLink } = store.refs;
 
