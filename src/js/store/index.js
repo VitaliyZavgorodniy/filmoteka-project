@@ -1,4 +1,5 @@
 export const store = {
+  language:'',
   user: null,
   genresList: [],
   page: 1,

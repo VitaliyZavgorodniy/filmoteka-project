@@ -16,53 +16,73 @@
     "ru": "моя библиотека",
     "en": "my library"
   },
-    "placeholder": {
+  "placeholder": {
     "uk": "Пошук фільмів за назвою",
     "ru": "Поиск фильмов по названию",
     "en": "Search for movies..."
   },
-    "watched": {
+  "watched": {
     "uk": "Переглянуто",
     "ru": "Просмотренные",
     "en": "Watched"
   },
-"inwatched":{
+  "inwatched": {
     "uk": "Додати в переглянуто",
     "ru": "Добавить в просмотренные"
-},
+  },
   "queue": {
     "uk": "В чергу",
     "ru": "В очередь",
     "en": "Queue"
   },
-  "login":{
-      "uk":"Вийти",
-      "ru":"Выйти",
-      "en":"Log Out"
+  "login": {
+    "uk": "Вийти",
+    "ru": "Выйти",
+    "en": "Log Out"
   },
-    "votes": {
+  "votes": {
     "uk": "Рейтинг/Голоси",
     "ru": "Рейтинг/Голоса",
     "en": "Vote / Votes"
   },
-    "popularity": {
+  "popularity": {
     "uk": "Популярність",
     "ru": "Популярность",
     "en": "Popularity"
   },
-    "title": {
+  "title": {
     "uk": "Ориг. назва",
     "ru": "Ориг. название",
     "en": "Original Title"
   },
-    "genres": {
+  "genres": {
     "uk": "Жанри",
     "ru": "Жанры",
     "en": "Genre"
   },
-    "about": {
+  "about": {
     "uk": "Фільм про",
     "ru": "Фильм о",
     "en": "About"
+  },
+  "rights": {
+    "uk": "© 2021 | Всі права захищені |",
+    "ru": "© 2021 | Все права защищены |",
+    "en": "© 2021 | All Rights Reserved |"
+  },
+  "dev": {
+    "uk": "Зроблено",
+    "ru": "Сделано",
+    "en": " Developed with"
+  },
+  "by": {
+    "uk": "з",
+    "ru": "с",
+    "en": "by"
+  },
+  "goit": {
+    "uk": "Студентами GoIT",
+    "ru": "Студентами GoIT",
+    "en": "GoIT Students"
   }
 }

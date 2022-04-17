@@ -2,7 +2,7 @@ import headerLng from '../utils/data/header.json';
 import { store } from '../store';
 import { initHome } from '../pages/home';
 
-const select = document.querySelector('#lang');
+const select = document.querySelector('.change-lang');
 
 select.addEventListener('change', changeLanguage);
 
@@ -11,7 +11,7 @@ export function changeLanguage() {
   store.language = lang;
   localStorage.setItem('language', lang);
   setHeaderData(lang);
-
+  changeFooterLang();
   initHome();
 }
 function setHeaderData(lang) {
@@ -72,6 +72,52 @@ export function changeModalLanguage() {
       document.querySelector(
         '.md-about-lang'
       ).textContent = `${headerLng.about.uk}`;
+      break;
+  }
+}
+export function changeFooterLang() {
+  switch (select.value) {
+    case 'ru':
+      document.querySelector(
+        '.footer-rights-lang'
+      ).textContent = `${headerLng.rights.ru}`;
+      document.querySelector(
+        '.footer-dev-lang'
+      ).textContent = `${headerLng.dev.ru}`;
+      document.querySelector(
+        '.footer-by-lang'
+      ).textContent = `${headerLng.by.ru}`;
+      document.querySelector(
+        '.footer-goit-lang'
+      ).textContent = `${headerLng.goit.ru}`;
+      break;
+    case 'uk':
+      document.querySelector(
+        '.footer-rights-lang'
+      ).textContent = `${headerLng.rights.uk}`;
+      document.querySelector(
+        '.footer-dev-lang'
+      ).textContent = `${headerLng.dev.uk}`;
+      document.querySelector(
+        '.footer-by-lang'
+      ).textContent = `${headerLng.by.uk}`;
+      document.querySelector(
+        '.footer-goit-lang'
+      ).textContent = `${headerLng.goit.uk}`;
+      break;
+    case 'en':
+      document.querySelector(
+        '.footer-rights-lang'
+      ).textContent = `${headerLng.rights.en}`;
+      document.querySelector(
+        '.footer-dev-lang'
+      ).textContent = `${headerLng.dev.en}`;
+      document.querySelector(
+        '.footer-by-lang'
+      ).textContent = `${headerLng.by.en}`;
+      document.querySelector(
+        '.footer-goit-lang'
+      ).textContent = `${headerLng.goit.en}`;
       break;
   }
 }
