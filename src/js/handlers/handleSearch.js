@@ -18,6 +18,8 @@ const handleSearch = (e) => {
     store.query = query;
     handleGallery('find', 1, searchQuery.value);
   }
+
+  refSearchform.reset();
 };
 
 store.refs.refSearchform.addEventListener('submit', handleSearch);
