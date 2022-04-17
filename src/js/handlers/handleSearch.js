@@ -1,11 +1,11 @@
 import { store } from '../store';
 
 import { handleGallery } from './handleGallery';
+import { handleSearchError } from './handleSearchError';
 
 const handleSearch = (e) => {
   e.preventDefault();
-  const { rootErrors } = store.refs;
-  rootErrors.textContent = '';
+  handleSearchError();
 
   const {
     elements: { searchQuery },

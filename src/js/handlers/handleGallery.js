@@ -8,6 +8,8 @@ import { renderSkeletonGallery } from '../render/renderSkeletonGallery';
 import { renderPagination } from '../render/renderPagination';
 import { renderEmptyGallery } from '../render/renderEmptyGallery';
 
+import { handleSearchError } from './handleSearchError';
+
 export const handleGallery = (mode, page) => {
   renderSkeletonGallery();
 
@@ -18,15 +20,16 @@ export const handleGallery = (mode, page) => {
     const fetchMethod = mode === 'find' ? fetchSearch : fetchTrending;
 
     fetchMethod(page, query).then((res) => {
-      const { rootErrors } = store.refs;
       const { list, totalItems } = res;
 
       if (!totalItems) {
         renderEmptyGallery();
 
-        return (rootErrors.textContent =
-          'Search result not successful. Enter the correct movie name');
+        return handleSearchError(
+          'Search result not successful. Enter the correct movie name'
+        );
       }
+      
       if (page == 1) renderPagination(totalItems);
       list.length && renderGallery(list);
     });
