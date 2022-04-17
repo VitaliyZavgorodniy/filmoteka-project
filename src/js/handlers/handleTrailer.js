@@ -19,15 +19,34 @@ export const openTrailer = async () => {
     }
 
     const { key: youtubeKey } = officialTrailer;
+    showTrailer();
     renderTrailer(youtubeKey);
   });
+
 };
 
-const closeTrailer = (e) => {
-  const element = e.target.getAttribute('data-action');
-  const trailerPlayerRef = document.querySelector('.trailer-player');
+const backdropTrailer = document.querySelector('.backdrop-trailer');
+const trailerPlayerRef = document.querySelector('.modal-trailer');
 
-  if (element === 'close-modal') return (trailerPlayerRef.innerHTML = '');
+const showTrailer = () => {
+  backdropTrailer.classList.remove('is-hidden');
+  document.addEventListener('keydown', closeOnEscClick);
 };
 
-store.refs.rootDetails.addEventListener('click', closeTrailer);
+const closeTrailer = () => {
+  trailerPlayerRef.innerHTML = '';
+  backdropTrailer.classList.add('is-hidden');
+  document.removeEventListener('keydown', closeOnEscClick);
+};
+
+const closeOnBackdropClick = (e) => {
+  if (!e.target === e.currentTarget) return;
+  closeTrailer();
+};
+backdropTrailer.addEventListener('click', closeOnBackdropClick);
+
+const closeOnEscClick = (e) => {
+  if (e.code === 'Escape') {
+    closeTrailer();
+  }
+};
