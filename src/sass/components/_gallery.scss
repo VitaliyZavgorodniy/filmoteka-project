@@ -34,6 +34,21 @@
       margin-top: 32px;
     }
   }
+
+  &__message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto 0;
+
+    &_title {
+      @include font(500, 20px, 24px, $secondary-color);
+    }
+
+    &_image {
+      margin-top: 20px;
+    }
+  }
 }
 
 .card {

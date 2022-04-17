@@ -4,6 +4,8 @@ import { handleGallery } from './handleGallery';
 
 const handleSearch = (e) => {
   e.preventDefault();
+  const { rootErrors } = store.refs;
+  rootErrors.textContent = '';
 
   const {
     elements: { searchQuery },

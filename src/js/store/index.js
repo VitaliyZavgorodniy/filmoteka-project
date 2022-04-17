@@ -21,5 +21,6 @@ export const store = {
     refLoginHeader: document.querySelector('[data-root="header-login"]'),
     btnLogin: document.querySelector('[data-action="login-google"]'),
     btnLogout: document.querySelector('[data-action="logout"]'),
+    rootErrors: document.querySelector('.errors-info'),
   },
 };
