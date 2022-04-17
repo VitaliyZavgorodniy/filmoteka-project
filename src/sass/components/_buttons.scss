@@ -83,6 +83,14 @@
     border-color: $accent-color;
     background-color: $accent-color;
   }
+
+  &.is-active {
+    cursor: pointer;
+    color: $white-color;
+    border-color: $accent-color;
+    background-color: $accent-color;
+    padding: 8.5px;
+  }
 }
 
 .btn-up {
@@ -135,7 +143,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   &:hover {
     border: solid 1px #ff1100b7;
   }
