@@ -6,8 +6,9 @@ import {
   checkLibraryContains,
 } from '../../services/serviceDatabase';
 
-import { templateSpinner } from '../../templates/templateSpinner';
+import { handleGallery } from '../../handlers/handleGallery';
 
+import { templateSpinner } from '../../templates/templateSpinner';
 import { templateDetailsButton } from '../../templates/templateDetailsButton';
 
 const showSpinner = (root) => {
@@ -19,6 +20,7 @@ export const renderDetailsLibraryButton = async (library = watched, movie) => {
   const buttonRoot = document.querySelector(`[data-root="${library}"]`);
   const { id } = movie;
   const { uid } = store.user;
+  const { mode } = store;
 
   showSpinner(buttonRoot);
 
@@ -35,11 +37,10 @@ export const renderDetailsLibraryButton = async (library = watched, movie) => {
     document
       .querySelector(`[data-remove-${library}]`)
       .addEventListener('click', () => {
-        buttonRoot.innerHTML = '';
-        buttonRoot.insertAdjacentHTML('afterbegin', templateSpinner());
+        showSpinner(buttonRoot);
         removeFromLibrary(uid, movie, library).then(() => {
-          showSpinner(buttonRoot);
           renderDetailsLibraryButton(library, movie);
+          handleGallery(mode);
         });
       });
   } else {
@@ -52,9 +53,10 @@ export const renderDetailsLibraryButton = async (library = watched, movie) => {
       .querySelector(`[data-add-${library}]`)
       .addEventListener('click', () => {
         showSpinner(buttonRoot);
-        updateLibrary(uid, movie, library).then(() =>
-          renderDetailsLibraryButton(library, movie)
-        );
+        updateLibrary(uid, movie, library).then(() => {
+          renderDetailsLibraryButton(library, movie);
+          handleGallery(mode);
+        });
       });
   }
 };

@@ -76,7 +76,7 @@ export const templateDetails = (
           <li class="details-popup__menu_item" id="watched" data-root="watched">
           
           </li>
-          <li class="details-popup__menu_item" data-root="queued">
+          <li class="details-popup__menu_item" data-root="queue">
 
           </li>
         </ul>

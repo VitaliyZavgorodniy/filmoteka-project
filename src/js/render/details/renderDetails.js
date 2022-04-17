@@ -38,7 +38,7 @@ export const renderDetails = (movie) => {
 
   if (checkToken()) {
     renderDetailsLibraryButton('watched', movie);
-    renderDetailsLibraryButton('queued', movie);
+    renderDetailsLibraryButton('queue', movie);
   } else {
     renderDetailsLogin(movie);
   }
