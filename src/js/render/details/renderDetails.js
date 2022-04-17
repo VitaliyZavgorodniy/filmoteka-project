@@ -1,16 +1,13 @@
-import { store } from '../store';
-import { openTrailer } from '../handlers/handleTrailer';
-import { closeDetails } from '../handlers/handleDetails';
+import { store } from '../../store';
+import { openTrailer } from '../../handlers/handleTrailer';
+import { closeDetails } from '../../handlers/handleDetails';
 
-import {
-  renderWatchButton,
-  renderQueueButton,
-  renderLoginButton,
-} from './renderDetailsButtons';
-import { templateDetails } from '../templates/templateDetails';
+import { renderDetailsLibraryButton } from './renderDetailsLibraryButton';
+import { renderDetailsLogin } from './renderDetailsLogin';
+import { templateDetails } from '../../templates/templateDetails';
 
-import { checkToken } from '../utils/checkToken';
-import { joinGenres } from '../utils/joinGenres';
+import { checkToken } from '../../utils/checkToken';
+import { joinGenres } from '../../utils/joinGenres';
 
 export const renderDetails = (movie) => {
   const { rootDetails } = store.refs;
@@ -40,10 +37,10 @@ export const renderDetails = (movie) => {
   rootDetails.insertAdjacentHTML('afterbegin', markup);
 
   if (checkToken()) {
-    renderWatchButton(movie);
-    renderQueueButton(movie);
+    renderDetailsLibraryButton('watched', movie);
+    renderDetailsLibraryButton('queued', movie);
   } else {
-    renderLoginButton(movie);
+    renderDetailsLogin(movie);
   }
 
   openTrailer();

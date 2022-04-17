@@ -23,7 +23,7 @@ export const templateDetailsSkeleton = () => `
 
       <ul class="details-popup__menu">
         <li class="details-popup__menu_item" data-root="watched"></li>
-        <li class="details-popup__menu_item" data-root="queue"></li>
+        <li class="details-popup__menu_item" data-root="queued"></li>
       </ul>
     </div>
   </div>

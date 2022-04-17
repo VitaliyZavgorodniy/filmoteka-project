@@ -19,7 +19,7 @@ const handleSearch = (e) => {
     handleGallery('find', 1, searchQuery.value);
   }
 
-  refSearchform.reset();
+  e.target.reset();
 };
 
 store.refs.refSearchform.addEventListener('submit', handleSearch);
