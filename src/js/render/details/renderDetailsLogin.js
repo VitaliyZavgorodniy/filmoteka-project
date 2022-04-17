@@ -32,10 +32,10 @@ export const renderDetailsLogin = (movie) => {
 
           rootButtons.innerHTML = `
           <li class="details-popup__menu_item" data-root="watched"></li>
-          <li class="details-popup__menu_item" data-root="queued"></li>`;
+          <li class="details-popup__menu_item" data-root="queue"></li>`;
 
           renderDetailsLibraryButton('watched', movie);
-          renderDetailsLibraryButton('queued', movie);
+          renderDetailsLibraryButton('queue', movie);
         }
       })
     );
