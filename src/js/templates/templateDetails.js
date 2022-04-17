@@ -19,7 +19,6 @@ export const templateDetails = (
         data-action="close-modal"
       </img>  
     </button>
-    <div class="trailer-player"></div>
     <div class="details-popup">
       <div class="details-popup__thumb">
         <button type="button" class="watch-trailer-btn" data-id="${id}">
