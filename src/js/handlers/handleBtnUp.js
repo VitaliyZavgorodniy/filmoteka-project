@@ -4,21 +4,7 @@ const btnUpElem = document.createElement('button');
 btnUpElem.setAttribute('type', 'button');
 btnUpElem.classList.add('btn-up');
 btnUpElem.classList.add('is-hidden');
-
-const svgElem = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-const useElem = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-useElem.setAttributeNS(
-  'http://www.w3.org/1999/xlink',
-  'href',
-  '/sprite.1d053e98.svg#icon-up-arrow'
-);
-
-svgElem.setAttribute('width', '20');
-svgElem.setAttribute('height', '20');
-svgElem.classList.add('btn-up__icon');
-
-svgElem.appendChild(useElem);
-btnUpElem.appendChild(svgElem);
+btnUpElem.innerHTML = `<svg class="btn-up__icon" width="25" height="25" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"> <path d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"/></svg>`;
 document.body.append(btnUpElem);
 
 export const upToTop = () => {
