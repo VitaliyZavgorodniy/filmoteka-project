@@ -2,7 +2,7 @@ import { store } from '../../store';
 import languagePackage from '../../store/languagePackage.json';
 import 'sharer.js';
 
-import { openTrailer } from '../../handlers/handleTrailer';
+import { renderTrailerBtn } from '../../handlers/handleTrailer';
 import { closeDetails } from '../../handlers/handleDetails';
 import { handleNotification } from '../../handlers/handleNotification';
 
@@ -66,7 +66,7 @@ export const renderDetails = (movie) => {
     renderDetailsLogin(movie);
   }
 
-  openTrailer();
+  renderTrailerBtn(id);
 
   document
     .querySelector('[data-modal-close]')

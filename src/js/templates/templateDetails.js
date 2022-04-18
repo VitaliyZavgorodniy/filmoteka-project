@@ -29,7 +29,7 @@ export const templateDetails = (
     </button>
     <div class="details-popup">
       <div class="details-popup__thumb">
-        <button type="button" class="watch-trailer-btn" data-id="${id}">
+        <button type="button" class="watch-trailer-btn is-hidden" data-id="${id}">
           <svg class="watch-trailer-btn__icon" width="70" height="50">
             <use href="${youtubeIcon}#icon-youtube"></use>
           </svg>

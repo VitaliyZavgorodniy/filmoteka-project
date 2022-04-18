@@ -1,34 +1,46 @@
 import { fetchMovieTrailer } from '../services/serviceMoviesAPI';
-import { store } from '../store';
 import { renderTrailer } from '../render/renderTrailer';
 
-export const openTrailer = async () => {
-  const watchTrailerBtnRef = document.querySelector('.watch-trailer-btn');
+const getTrailers = async (movieId) => {
+  const results = await fetchMovieTrailer(movieId);
+  const officialTrailer = results.find((trailer) =>
+    trailer.name.includes('Official')
+  );
 
+  return officialTrailer;
+};
+
+export const renderTrailerBtn = async (movieId) => {
+  const officialTrailer = await getTrailers(movieId);
+
+  if (!officialTrailer) {
+    return;
+  }
+  showTrailerBtn();
+  openTrailerOnclick();
+};
+
+const showTrailerBtn = () => {
+  const watchTrailerBtnRef = document.querySelector('.watch-trailer-btn');
+  watchTrailerBtnRef.classList.remove('is-hidden');
+};
+
+const openTrailerOnclick = () => {
+  const watchTrailerBtnRef = document.querySelector('.watch-trailer-btn');
   watchTrailerBtnRef.addEventListener('click', async (e) => {
     const movieId = e.target.getAttribute('data-id');
-    const results = await fetchMovieTrailer(movieId);
-
-    const officialTrailer = results.find((trailer) =>
-      trailer.name.includes('Official')
-    );
-
-    if (!officialTrailer) {
-      alert(`Sorry, we didn't find the official trailer`);
-      return;
-    }
+    const officialTrailer = await getTrailers(movieId);
 
     const { key: youtubeKey } = officialTrailer;
-    showTrailer();
+    showTrailerWindow();
     renderTrailer(youtubeKey);
   });
-
 };
 
 const backdropTrailer = document.querySelector('.backdrop-trailer');
 const trailerPlayerRef = document.querySelector('.modal-trailer');
 
-const showTrailer = () => {
+const showTrailerWindow = () => {
   backdropTrailer.classList.remove('is-hidden');
   document.addEventListener('keydown', closeOnEscClick);
 };
