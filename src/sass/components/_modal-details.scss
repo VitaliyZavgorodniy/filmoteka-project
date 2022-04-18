@@ -60,11 +60,11 @@
   }
 
   &__title {
-    @include font(500, 20px, 23px);
+    @include font(500, 20px, 22px);
     text-transform: uppercase;
 
     @include breakpoint(desktop) {
-      @include font(500, 30px, 23px);
+      @include font(500, 30px, 32px);
     }
   }
 

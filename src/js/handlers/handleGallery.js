@@ -14,12 +14,12 @@ export const handleGallery = (mode, page) => {
   renderSkeletonGallery();
 
   store.mode = mode;
-  const { query, language } = store;
+  const { query, language, user } = store;
 
   if (mode === 'trend' || mode === 'find') {
     const fetchMethod = mode === 'find' ? fetchSearch : fetchTrending;
 
-    fetchMethod(language,page, query).then((res) => {
+    fetchMethod(language, page, query).then((res) => {
       const { list, totalItems } = res;
 
       if (!totalItems) {
@@ -36,8 +36,12 @@ export const handleGallery = (mode, page) => {
   }
 
   if (mode === 'watched' || mode === 'queue') {
-    const uid = store.user.uid;
-    renderPagination();
-    fetchLibrary(uid, mode).then((res) => renderGallery(res));
+    if (user) {
+      const uid = store.user.uid;
+      renderPagination();
+      fetchLibrary(uid, mode).then((res) => renderGallery(res));
+    } else {
+      renderEmptyGallery();
+    }
   }
 };

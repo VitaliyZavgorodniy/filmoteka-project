@@ -24,6 +24,7 @@
             class="navigation__link"
             data-action="go-page"
             data-page="library"
+            data-lang="libraryButton"
             href="#"
             >My library</a
           >
@@ -39,6 +40,7 @@
           name="searchQuery"
           type="text"
           class="search-form__input"
+          data-lang="searchInput"
           placeholder="Search for movies..."
         />
 
@@ -57,6 +59,7 @@
           <button
             type="button"
             data-action="watched"
+            data-lang="watchedLibFolder"
             class="library-menu__button is-active"
           >
             watched
@@ -66,13 +69,19 @@
           <button
             type="button"
             data-action="queue"
+            data-lang="queueLibFolder"
             class="library-menu__button"
           >
             queue
           </button>
         </li>
         <li class="library-menu__item">
-          <button type="button" class="button-logout" data-action="logout">
+          <button
+            type="button"
+            class="button-logout"
+            data-lang="logOutButton"
+            data-action="logout"
+          >
             Log Out
           </button>
         </li>
@@ -85,7 +94,8 @@
             src="./assets/icons/google-logo.svg"
             alt="google-icon"
           />
-          <span class="login-button__title">Sign in with Google</span>
+          <span class="login-button__title" data-lang="singInButton"
+            >Sign in with Google</span>
         </button>
       </div>
       <select class="change-lang">
