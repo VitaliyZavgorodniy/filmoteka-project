@@ -28,7 +28,8 @@ export const renderDetails = (movie) => {
     id,
   } = movie;
 
-  const link = `${window.location.origin}/?id=${id}`;
+  console.log(window.location.pathname);
+  const link = `${window.location.origin}${window.location.pathname}?id=${id}`;
 
   const markup = templateDetails(
     languagePackage,
@@ -55,10 +56,7 @@ export const renderDetails = (movie) => {
     navigator.clipboard
       .writeText(link)
       .then(() =>
-        handleNotification(
-          'success',
-          languagePackage.shareLinkButton[language]
-        )
+        handleNotification('success', languagePackage.shareLinkButton[language])
       );
   });
 
