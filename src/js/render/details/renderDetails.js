@@ -28,7 +28,6 @@ export const renderDetails = (movie) => {
     id,
   } = movie;
 
-  console.log(window.location.pathname);
   const link = `${window.location.origin}${window.location.pathname}?id=${id}`;
 
   const markup = templateDetails(

@@ -1,145 +1,173 @@
 {
   "homeButton": {
+    "en": "home",
+    "de": "homepage",
     "uk": "головна",
-    "ru": "главная",
-    "en": "home"
+    "ru": "главная"
   },
   "libraryButton": {
+    "en": "my library",
+    "de": "meine Bibliothek",
     "uk": "моя бібліотека",
-    "ru": "моя библиотека",
-    "en": "my library"
+    "ru": "моя библиотека"
   },
   "searchInput": {
+    "en": "Search for movies...",
+    "de": "Suche nach Filmen...",
     "uk": "Пошук фільмів за назвою",
-    "ru": "Поиск фильмов по названию",
-    "en": "Search for movies..."
+    "ru": "Поиск фильмов по названию"
   },
   "watchedLibFolder": {
+    "en": "Watched",
+    "de": "Schaute",
     "uk": "Переглянуто",
-    "ru": "Просмотренные",
-    "en": "Watched"
+    "ru": "Просмотренные"
   },
   "queueLibFolder": {
+    "en": "Queue",
+    "de": "Warteschlange",
     "uk": "Черга",
-    "ru": "Очередь",
-    "en": "Queue"
+    "ru": "Очередь"
   },
   "singInButton": {
+    "en": "Sign in with Google",
+    "de": "Mit Google einloggen",
     "uk": "Війти через Google",
-    "ru": "Войти через Google",
-    "en": "Sign in with Google"
+    "ru": "Войти через Google"
   },
   "logOutButton": {
+    "en": "Log Out",
+    "de": "Ausloggen",
     "uk": "Вийти",
-    "ru": "Выйти",
-    "en": "Log Out"
+    "ru": "Выйти"
   },
   "footerCopyright": {
-    "uk": "© 2021 | Всі права захищені |",
-    "ru": "© 2021 | Все права защищены |",
-    "en": "© 2021 | All Rights Reserved |"
+    "en": "© 2022 | All Rights Reserved |",
+    "de": "© 2022 | Alle Rechte vorbehalten |",
+    "uk": "© 2022 | Всі права захищені |",
+    "ru": "© 2022 | Все права защищены |"
   },
   "footerDeveloped": {
+    "en": "Developed with",
+    "de": "Entwickelt mit",
     "uk": "Зроблено",
-    "ru": "Сделано",
-    "en": "Developed with"
+    "ru": "Сделано"
   },
   "footerBy": {
+    "en": "by",
+    "de": "von",
     "uk": "",
-    "ru": "",
-    "en": "by"
+    "ru": ""
   },
   "footerAuthors": {
+    "en": "GoIT Students",
+    "de": "GoIT Studenten",
     "uk": "Студентами GoIT",
-    "ru": "Студентами GoIT",
-    "en": "GoIT Students"
+    "ru": "Студентами GoIT"
   },
 
   "modalVotes": {
+    "en": "Vote / Votes",
+    "de": "Bewertung/Stimmen",
     "uk": "Рейтинг/Голоси",
-    "ru": "Рейтинг/Голоса",
-    "en": "Vote / Votes"
+    "ru": "Рейтинг/Голоса"
   },
   "modalPopularity": {
+    "en": "Popularity",
+    "de": "Popularität",
     "uk": "Популярність",
-    "ru": "Популярность",
-    "en": "Popularity"
+    "ru": "Популярность"
   },
   "modalTitle": {
+    "en": "Original Title",
+    "de": "Originaler Titel",
     "uk": "Ориг. назва",
-    "ru": "Ориг. название",
-    "en": "Original Title"
+    "ru": "Ориг. название"
   },
   "modalGenres": {
-    "uk": "Жанри",
-    "ru": "Жанры",
-    "en": "Genre"
+    "en": "Genre",
+    "de": "Genre",
+    "uk": "Жанр",
+    "ru": "Жанр"
   },
   "modalAbout": {
-    "uk": "Фільм про",
-    "ru": "Фильм о",
-    "en": "About"
+    "en": "About",
+    "de": "Über",
+    "uk": "Про фільм",
+    "ru": "Про фильм"
   },
 
   "watchedAddButton": {
+    "en": "add to watched",
+    "de": "zu beobachtet hinzufügen",
     "uk": "до переглянутих",
-    "ru": "в просмотренные",
-    "en": "add to watched"
+    "ru": "в просмотренные"
   },
   "queueAddButton": {
+    "en": "add to queue",
+    "de": "zur Warteschlange hinzufügen",
     "uk": "в чергу",
-    "ru": "в очередь",
-    "en": "add to queue"
+    "ru": "в очередь"
   },
   "watchedRemoveButton": {
+    "en": "remove from watched",
+    "de": "aus der Beobachtung entfernen",
     "uk": "прибрати з переглянутих",
-    "ru": "убрать из просмотренных",
-    "en": "remove from watched"
+    "ru": "убрать из просмотренных"
   },
   "queueRemoveButton": {
+    "en": "remove from queue",
+    "de": "aus Warteschlange entfernen",
     "uk": "прибрати з черги",
-    "ru": "убрать из очереди",
-    "en": "remove from queue"
+    "ru": "убрать из очереди"
   },
   "shareButtons": {
+    "en": "Share:",
+    "de": "Teilen:",
     "uk": "Поділитися:",
-    "ru": "Поделиться:",
-    "en": "Share:"
+    "ru": "Поделиться:"
   },
   "shareLinkButton": {
+    "en": "Link copied",
+    "de": "Link kopiert",
     "uk": "Посилання скопійовано",
-    "ru": "Ссылка скопирована",
-    "en": "Link copied"
+    "ru": "Ссылка скопирована"
   },
   "shareText": {
+    "en": "Hey! Look which movie I liked",
+    "de": "Hey! Schau mal, welcher Film mir gefallen hat",
     "uk": "Хей! Дивись який фільм мені сподобався",
-    "ru": "Эй! Смотри какой фильм мне понравился",
-    "en": "Hey! See which movie I liked"
+    "ru": "Эй! Смотри какой фильм мне понравился"
   },
 
   "messageNothingFound": {
+    "en": "Oops... here's nothing to show",
+    "de": "Hoppla... hier ist nichts zu zeigen",
     "uk": "Упс... а тут нічого немає",
-    "ru": "Упс... а тут ничего нет",
-    "en": "Oops... here's nothing to show"
+    "ru": "Упс... а тут ничего нет"
   },
   "messageErrorSearch": {
+    "en": "Nothing was found",
+    "de": "Es wurde nichts gefunden",
     "uk": "Нічого не знайдено",
-    "ru": "Ничего не найдено",
-    "en": "Nothing was found"
+    "ru": "Ничего не найдено"
   },
   "messageAuthLibrary": {
+    "en": "Sign in to add movies to your library",
+    "de": "Melden Sie sich an, um Ihrer Bibliothek Filme hinzuzufügen",
     "uk": "Увійдіть до облікового запису, щоб додати фільми до бібліотеки",
-    "ru": "Войдите в аккаунт, чтобы добавить фильмы в библиотеку",
-    "en": "Sign in to add movies to your library"
+    "ru": "Войдите в аккаунт, чтобы добавить фильмы в библиотеку"
   },
   "messageEmptyLibrary": {
+    "en": "You haven't added anything to the library yet",
+    "de": "Sie haben der Bibliothek noch nichts hinzugefügt",
     "uk": "Ви ще нічого не додали до бібліотеки",
-    "ru": "Вы еще ничего не добавили в библиотеку",
-    "en": "You haven't added anything to the library yet"
+    "ru": "Вы еще ничего не добавили в библиотеку"
   },
   "messageNotFound": {
+    "en": "Movie not found",
+    "de": "Film nicht gefunden",
     "uk": "Фільм не знайдено",
-    "ru": "Фильм не найден",
-    "en": "Movie not found"
+    "ru": "Фильм не найден"
   }
 }
