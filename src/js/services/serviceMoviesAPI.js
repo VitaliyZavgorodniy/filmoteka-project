@@ -19,8 +19,9 @@ export const fetchGenres = async (language = store.language) => {
   return response[0].data.genres.concat(response[1].data.genres);
 };
 
-export const fetchTrending = async (page = 1, language = store.language) =>
-  await axios
+export const fetchTrending = async (page = 1, language = store.language) => {
+  console.log(language);
+  return await axios
     .get(`/trending/movie/day`, {
       params: {
         language,
@@ -33,6 +34,7 @@ export const fetchTrending = async (page = 1, language = store.language) =>
       totalItems: res.data.total_results,
     }))
     .catch((e) => console.error(e));
+};
 
 export const fetchSearch = async (page = 1, query, language = store.language) =>
   await axios
@@ -58,3 +60,12 @@ export const fetchSingleMovie = async (id, language = store.language) =>
     })
     .then((res) => ({ ...res.data }))
     .catch((e) => console.error(e));
+
+export const fetchMovieTrailer = async (movieId) => {
+  try {
+    const res = await axios.get(`/movie/${movieId}/videos`);
+    return res.data.results;
+  } catch (e) {
+    return console.error(e);
+  }
+};

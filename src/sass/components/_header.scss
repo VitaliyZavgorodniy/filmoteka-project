@@ -215,6 +215,12 @@
   }
 }
 
+.errors-info {
+  margin-top: 20px;
+  color: $error-color;
+  @include font(400, 14px, 16px, $error-color);
+}
+
 .header-login-button {
   @include animate-active();
 }

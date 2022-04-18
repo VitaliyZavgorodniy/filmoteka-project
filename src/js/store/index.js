@@ -6,6 +6,7 @@ export const store = {
   mode: 'trend',
   modes: ['trend', 'find', 'queue', 'watched'],
   refs: {
+    body: document.querySelector('body'),
     rootHeader: document.querySelector('.header__container'),
     rootPagination: document.querySelector('[data-root="pagination"]'),
     rootDetails: document.querySelector('[data-modal]'),
@@ -22,5 +23,7 @@ export const store = {
     refLoginHeader: document.querySelector('[data-root="header-login"]'),
     btnLogin: document.querySelector('[data-action="login-google"]'),
     btnLogout: document.querySelector('[data-action="logout"]'),
+    rootErrors: document.querySelector('.errors-info'),
+    authorsModalLink: document.querySelector('[data-action="authors-modal"]'),
   },
 };

@@ -4,6 +4,7 @@ import { checkToken } from '../utils/checkToken';
 
 import { handleGallery } from '../handlers/handleGallery';
 import { showLibSelector } from '../handlers/showLibSelector';
+import { handleSearchError } from '../handlers/handleSearchError';
 
 import { renderEmptyGallery } from '../render/renderEmptyGallery';
 import { renderPagination } from '../render/renderPagination';
@@ -18,6 +19,7 @@ export const initLibrary = () => {
 
   store.mode = 'watched';
 
+  handleSearchError();
   showLibSelector();
   if (checkToken()) {
     handleGallery('watched', 1);
