@@ -23,7 +23,6 @@ export const store = {
     refLoginHeader: document.querySelector('[data-root="header-login"]'),
     btnLogin: document.querySelector('[data-action="login-google"]'),
     btnLogout: document.querySelector('[data-action="logout"]'),
-    rootErrors: document.querySelector('.errors-info'),
     authorsModalLink: document.querySelector('[data-action="authors-modal"]'),
     refLangSelector: document.querySelector('.change-lang'),
     scrollUpBtn: document.querySelector('[data-action="scroll-up"]'),

@@ -149,6 +149,7 @@
     margin-top: 42px;
   }
 }
+
 .change-lang {
   position: absolute;
   right: 15px;
@@ -213,12 +214,6 @@
     width: 100%;
     height: 100%;
   }
-}
-
-.errors-info {
-  margin-top: 20px;
-  color: $error-color;
-  @include font(400, 14px, 16px, $error-color);
 }
 
 .header-login-button {
