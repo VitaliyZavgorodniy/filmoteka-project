@@ -6,7 +6,7 @@ import './handlers/handleLogin';
 import './handlers/handleLogout';
 import './handlers/handleSearch';
 import './handlers/handleDetails';
-import './handlers/handleBtnUp';
+import './handlers/handleScrollUp';
 import './handlers/handleLanguage';
 import './handlers/handleTrailer';
 import './handlers/handleAuthorsModal';

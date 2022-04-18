@@ -1,4 +1,5 @@
 import iconCloseButton from '../../assets/icons/close.svg';
+import youtubeIcon from '../../assets/icons/sprite.svg';
 
 export const templateDetails = (
   lngPack,
@@ -26,7 +27,7 @@ export const templateDetails = (
       <div class="details-popup__thumb">
         <button type="button" class="watch-trailer-btn" data-id="${id}">
           <svg class="watch-trailer-btn__icon" width="70" height="50">
-            <use href="/sprite.1d053e98.svg#icon-youtube"></use>
+            <use href="${youtubeIcon}#icon-youtube"></use>
           </svg>
         </button>
         <picture class="card__image">

@@ -26,5 +26,6 @@ export const store = {
     rootErrors: document.querySelector('.errors-info'),
     authorsModalLink: document.querySelector('[data-action="authors-modal"]'),
     refLangSelector: document.querySelector('.change-lang'),
+    scrollUpBtn: document.querySelector('[data-action="scroll-up"]'),
   },
 };

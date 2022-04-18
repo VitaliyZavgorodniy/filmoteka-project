@@ -4,7 +4,7 @@ import 'tui-pagination/dist/tui-pagination.css';
 import { store } from '../store';
 
 import { handleGallery } from '../handlers/handleGallery';
-import { upToTop } from '../handlers/handleBtnUp';
+import { handleScrollUp } from '../handlers/handleScrollUp';
 
 export const renderPagination = (totalItems = 1) => {
   const { rootPagination } = store.refs;
@@ -20,7 +20,7 @@ export const renderPagination = (totalItems = 1) => {
 
   instance.on('beforeMove', (e) => {
     store.page = e.page;
-    upToTop();
+    handleScrollUp();
     handleGallery();
   });
 };
