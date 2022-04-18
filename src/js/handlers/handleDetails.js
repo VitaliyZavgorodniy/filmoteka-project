@@ -11,11 +11,12 @@ export const openDetails = (e) => {
 
   renderSkeletonDetails();
 
+  const { language } = store;
   const { rootDetails, body } = store.refs;
   rootDetails.classList.remove('is-hidden');
   body.classList.add('is-open');
 
-  index && fetchSingleMovie(index).then((res) => renderDetails(res));
+  index && fetchSingleMovie(language, index).then((res) => renderDetails(res));
 };
 
 export const closeDetails = (e) => {

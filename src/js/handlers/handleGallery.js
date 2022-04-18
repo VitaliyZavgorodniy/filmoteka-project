@@ -14,12 +14,12 @@ export const handleGallery = (mode, page) => {
   renderSkeletonGallery();
 
   store.mode = mode;
-  const { query } = store;
+  const { query, language } = store;
 
   if (mode === 'trend' || mode === 'find') {
     const fetchMethod = mode === 'find' ? fetchSearch : fetchTrending;
 
-    fetchMethod(page, query).then((res) => {
+    fetchMethod(language,page, query).then((res) => {
       const { list, totalItems } = res;
 
       if (!totalItems) {
@@ -29,7 +29,7 @@ export const handleGallery = (mode, page) => {
           'Search result not successful. Enter the correct movie name'
         );
       }
-      
+
       if (page == 1) renderPagination(totalItems);
       list.length && renderGallery(list);
     });
