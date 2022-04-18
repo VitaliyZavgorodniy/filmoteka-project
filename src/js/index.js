@@ -36,7 +36,7 @@ import { changeLanguage } from './utils/changeLanguage';
   if (initPage) {
     if (initPage === 'home') initHome();
     if (initPage === 'library') initLibrary();
-
+    
     menuLinks.forEach((link) => {
       if (link.getAttribute('data-page') === initPage)
         link.classList.add('active');

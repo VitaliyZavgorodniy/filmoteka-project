@@ -10,7 +10,8 @@ export const handleLibType = (e) => {
   btnsLibs.forEach((element) => element.classList.remove('is-active'));
   link.classList.add('is-active');
 
-  handleGallery(lib);
+  store.mode = lib;
+  handleGallery();
 };
 
 store.refs.btnsLibs.forEach((element) =>

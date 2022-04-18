@@ -2,7 +2,6 @@ import { store } from '../store';
 
 import { handleGallery } from '../handlers/handleGallery';
 import { showSearchForm } from '../handlers/showSearchForm';
-import { handleSearchError } from '../handlers/handleSearchError';
 
 export const initHome = () => {
   const { rootHeader } = store.refs;
@@ -13,8 +12,8 @@ export const initHome = () => {
   localStorage.setItem('page', 'home');
 
   store.mode = 'trend';
+  store.page = 1;
 
-  handleSearchError();
   showSearchForm();
-  handleGallery('trend', 1);
+  handleGallery();
 };

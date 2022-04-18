@@ -6,13 +6,13 @@ import { handleGallery } from '../handlers/handleGallery';
 import { fetchGenres } from '../services/serviceMoviesAPI';
 
 export const changeLanguage = async () => {
-  const { mode, page, language } = store;
+  const { language, mode } = store;
   setHeaderLanguage();
 
   const genres = await fetchGenres(language);
   store.genresList = genres;
 
-  handleGallery(mode, page);
+  if (mode) handleGallery();
 };
 
 const setHeaderLanguage = () => {

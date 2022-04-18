@@ -3,7 +3,7 @@ export const store = {
   user: null,
   genresList: [],
   page: 1,
-  mode: 'trend',
+  mode: null,
   modes: ['trend', 'find', 'queue', 'watched'],
   refs: {
     body: document.querySelector('body'),

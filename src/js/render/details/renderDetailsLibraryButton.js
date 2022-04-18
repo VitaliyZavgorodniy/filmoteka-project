@@ -47,7 +47,8 @@ export const renderDetailsLibraryButton = async (
         showSpinner(buttonRoot);
         removeFromLibrary(uid, movie, library).then(() => {
           renderDetailsLibraryButton(library, movie);
-          handleGallery(mode);
+          store.mode = mode;
+          handleGallery();
         });
       });
   } else {
@@ -65,7 +66,8 @@ export const renderDetailsLibraryButton = async (
         showSpinner(buttonRoot);
         updateLibrary(uid, movie, library).then(() => {
           renderDetailsLibraryButton(library, movie);
-          handleGallery(mode);
+          store.mode = mode;
+          handleGallery();
         });
       });
   }

@@ -1,11 +1,9 @@
 import { store } from '../store';
 
 import { handleGallery } from './handleGallery';
-import { handleSearchError } from './handleSearchError';
 
 const handleSearch = (e) => {
   e.preventDefault();
-  handleSearchError();
 
   const {
     elements: { searchQuery },
@@ -14,9 +12,11 @@ const handleSearch = (e) => {
   const query = searchQuery.value.trim();
 
   if (query) {
-    store.mode = 'search';
+    store.mode = 'find';
+    store.page = 1;
     store.query = query;
-    handleGallery('find', 1, searchQuery.value);
+
+    handleGallery();
   }
 
   e.target.reset();

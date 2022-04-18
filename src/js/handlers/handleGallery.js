@@ -1,4 +1,5 @@
 import { store } from '../store';
+import languagePackage from '../store/languagePackage.json';
 
 import { fetchTrending, fetchSearch } from '../services/serviceMoviesAPI';
 import { fetchLibrary } from '../services/serviceDatabase';
@@ -8,13 +9,11 @@ import { renderSkeletonGallery } from '../render/renderSkeletonGallery';
 import { renderPagination } from '../render/renderPagination';
 import { renderEmptyGallery } from '../render/renderEmptyGallery';
 
-import { handleSearchError } from './handleSearchError';
+import { handleNotification } from './handleNotification';
 
-export const handleGallery = (mode, page) => {
+export const handleGallery = () => {
+  const { mode, page, query, language, user } = store;
   renderSkeletonGallery();
-
-  store.mode = mode;
-  const { query, language, user } = store;
 
   if (mode === 'trend' || mode === 'find') {
     const fetchMethod = mode === 'find' ? fetchSearch : fetchTrending;
@@ -25,9 +24,12 @@ export const handleGallery = (mode, page) => {
       if (!totalItems) {
         renderEmptyGallery();
 
-        return handleSearchError(
-          'Search result not successful. Enter the correct movie name'
+        handleNotification(
+          'error',
+          languagePackage.messageErrorSearch[language]
         );
+
+        return;
       }
 
       if (page == 1) renderPagination(totalItems);
@@ -39,7 +41,15 @@ export const handleGallery = (mode, page) => {
     if (user) {
       const uid = store.user.uid;
       renderPagination();
-      fetchLibrary(uid, mode).then((res) => renderGallery(res));
+      fetchLibrary(uid, mode).then((res) => {
+        if (res.length) return renderGallery(res);
+        
+        renderEmptyGallery();
+        handleNotification(
+          'info',
+          languagePackage.messageEmptyLibrary[language]
+        );
+      });
     } else {
       renderEmptyGallery();
     }

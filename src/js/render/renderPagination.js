@@ -7,7 +7,6 @@ import { handleGallery } from '../handlers/handleGallery';
 import { upToTop } from '../handlers/handleBtnUp';
 
 export const renderPagination = (totalItems = 1) => {
-  const { mode } = store;
   const { rootPagination } = store.refs;
 
   if (parseInt(totalItems) < 20) return (rootPagination.innerHTML = '');
@@ -22,6 +21,6 @@ export const renderPagination = (totalItems = 1) => {
   instance.on('beforeMove', (e) => {
     store.page = e.page;
     upToTop();
-    handleGallery(mode, e.page, store.query);
+    handleGallery();
   });
 };

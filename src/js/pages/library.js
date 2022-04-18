@@ -1,16 +1,18 @@
 import { store } from '../store';
+import languagePackage from '../store/languagePackage.json';
 
 import { checkToken } from '../utils/checkToken';
 
 import { handleGallery } from '../handlers/handleGallery';
 import { showLibSelector } from '../handlers/showLibSelector';
-import { handleSearchError } from '../handlers/handleSearchError';
+import { handleNotification } from '../handlers/handleNotification';
 
 import { renderEmptyGallery } from '../render/renderEmptyGallery';
 import { renderPagination } from '../render/renderPagination';
 
 export const initLibrary = () => {
   const { rootHeader } = store.refs;
+  const { language } = store;
 
   rootHeader.classList.add('header__container_library');
   rootHeader.classList.remove('header__container_home');
@@ -18,12 +20,14 @@ export const initLibrary = () => {
   localStorage.setItem('page', 'library');
 
   store.mode = 'watched';
+  store.page = 1;
 
-  handleSearchError();
   showLibSelector();
+
   if (checkToken()) {
-    handleGallery('watched', 1);
+    handleGallery();
   } else {
+    handleNotification('info', languagePackage.messageAuthLibrary[language]);
     renderPagination();
     renderEmptyGallery();
   }

@@ -101,10 +101,25 @@
     "ru": "убрать из очереди",
     "en": "remove from queue"
   },
-  
+
   "messageNothingFound": {
     "uk": "Упс... а тут нічого немає",
     "ru": "Упс... а тут ничего нет",
     "en": "Oops... here's nothing to show"
+  },
+  "messageErrorSearch": {
+    "uk": "Нічого не знайдено",
+    "ru": "Ничего не найдено",
+    "en": "Nothing was found"
+  },
+  "messageAuthLibrary": {
+    "uk": "Увійдіть до облікового запису, щоб додати фільми до бібліотеки",
+    "ru": "Войдите в аккаунт, чтобы добавить фильмы в библиотеку",
+    "en": "Sign in to add movies to your library"
+  },
+  "messageEmptyLibrary": {
+    "uk": "Ви ще нічого не додали до бібліотеки",
+    "ru": "Вы еще ничего не добавили в библиотеку",
+    "en": "You haven't added anything to the library yet"
   }
 }
