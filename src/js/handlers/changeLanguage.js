@@ -1,18 +1,24 @@
 import headerLng from '../utils/data/header.json';
 import { store } from '../store';
 import { initHome } from '../pages/home';
-
+import { initLibrary } from '../pages/library';
+import { handleGallery } from './handleGallery';
+import { fetchGenres } from '../services/serviceMoviesAPI';
 const select = document.querySelector('.change-lang');
 
 select.addEventListener('change', changeLanguage);
 
-export function changeLanguage() {
+export async function changeLanguage() {
   let lang = select.value;
   store.language = lang;
   localStorage.setItem('language', lang);
   setHeaderData(lang);
   changeFooterLang();
-  initHome();
+  let page = localStorage.getItem('page');
+   const genres = await fetchGenres();
+  store.genresList = genres;
+  handleGallery(store.mode, store.page);
+
 }
 function setHeaderData(lang) {
   document.querySelector('.logo__text').textContent = `${
