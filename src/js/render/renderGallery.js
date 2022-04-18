@@ -7,6 +7,7 @@ import { joinGenres } from '../utils/joinGenres';
 import { parseYear } from '../utils/parseYear';
 
 export const renderGallery = (list) => {
+  console.log('renderGallery')
   const { genresList, mode } = store;
   const { rootGallery } = store.refs;
 
