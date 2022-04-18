@@ -29,7 +29,7 @@ export const templateDetails = (
           <svg class="watch-trailer-btn__icon" width="70" height="50">
             <use href="${youtubeIcon}#icon-youtube"></use>
           </svg>
-        </button>
+      </button>
         <picture class="card__image">
           <source 
             srcset="https://themoviedb.org/t/p/w500${poster_path}"

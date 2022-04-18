@@ -94,6 +94,10 @@
 }
 
 .btn-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   cursor: pointer;
   text-align: center;
   border: none;
@@ -114,7 +118,7 @@
     fill $animation-duration $bezier-transition;
 
   &:hover {
-    background-color: $accent-color-dark;
+    background-color: #ff6b08da;
   }
 }
 
