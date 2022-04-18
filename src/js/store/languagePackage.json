@@ -100,5 +100,11 @@
     "uk": "прибрати з черги",
     "ru": "убрать из очереди",
     "en": "remove from queue"
+  },
+  
+  "messageNothingFound": {
+    "uk": "Упс... а тут нічого немає",
+    "ru": "Упс... а тут ничего нет",
+    "en": "Oops... here's nothing to show"
   }
 }

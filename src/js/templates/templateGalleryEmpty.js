@@ -1,8 +1,8 @@
 import image from '../../assets/images/no-gallery.svg';
 
-export const templateGalleryEmpty = () => `
+export const templateGalleryEmpty = (text) => `
   <div class="gallery__message">
-    <h2 class="gallery__message_title">Oops... here's nothing to show</h2>
+    <h2 class="gallery__message_title">${text}</h2>
     <img 
       class="gallery__message_image"
       src=${image} 
