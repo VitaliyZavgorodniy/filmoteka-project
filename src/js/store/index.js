@@ -23,5 +23,6 @@ export const store = {
     btnLogin: document.querySelector('[data-action="login-google"]'),
     btnLogout: document.querySelector('[data-action="logout"]'),
     rootErrors: document.querySelector('.errors-info'),
+    authorsModalLink: document.querySelector('[data-action="authors-modal"]'),
   },
 };

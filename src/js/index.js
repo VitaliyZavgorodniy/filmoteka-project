@@ -8,6 +8,7 @@ import './handlers/handleSearch';
 import './handlers/handleDetails';
 import './handlers/handleBtnUp';
 import './handlers/handleTrailer';
+import './handlers/handleAuthorsModal';
 
 import { fetchGenres } from './services/serviceMoviesAPI';
 
