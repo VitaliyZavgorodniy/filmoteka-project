@@ -1,12 +1,15 @@
 import { store } from '../store';
+import languagePackage from '../store/languagePackage.json';
 
 import { fetchSingleMovie } from '../services/serviceMoviesAPI';
 
 import { renderDetails } from '../render/details/renderDetails';
 import { renderSkeletonDetails } from '../render/renderSkeletonDetails';
 
-export const openDetails = (e) => {
-  const index = e.target.getAttribute('data-id');
+import { handleNotification } from './handleNotification';
+
+export const openDetails = (e, id) => {
+  const index = id ? id : e?.target?.getAttribute('data-id');
   if (!index) return;
 
   renderSkeletonDetails();
@@ -16,24 +19,25 @@ export const openDetails = (e) => {
   rootDetails.classList.remove('is-hidden');
   body.classList.add('is-open');
 
-  index && fetchSingleMovie(language, index).then((res) => renderDetails(res));
+  index &&
+    fetchSingleMovie(language, index).then((res) => {
+      if (res) return renderDetails(res);
+
+      handleNotification('error', languagePackage.messageNotFound[language]);
+      closeDetails(true);
+    });
 };
 
 export const closeDetails = (e) => {
   const { rootDetails, body } = store.refs;
 
-  if (e?.code === 'Escape') {
-    body.classList.add('is-open');
-    rootDetails.classList.add('is-hidden');
-    return;
-  }
+  const bool = e === true;
+  const code = e?.code === 'Escape';
+  const action = e?.target?.getAttribute('data-action') === 'close-modal';
 
-  const element = e.target.getAttribute('data-action');
-
-  if (element === 'close-modal') {
+  if (bool || code || action) {
     body.classList.remove('is-open');
     rootDetails.classList.add('is-hidden');
-    return;
   }
 };
 

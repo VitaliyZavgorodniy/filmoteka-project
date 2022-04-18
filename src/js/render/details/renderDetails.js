@@ -1,8 +1,10 @@
 import { store } from '../../store';
 import languagePackage from '../../store/languagePackage.json';
+import 'sharer.js';
 
 import { openTrailer } from '../../handlers/handleTrailer';
 import { closeDetails } from '../../handlers/handleDetails';
+import { handleNotification } from '../../handlers/handleNotification';
 
 import { renderDetailsLibraryButton } from './renderDetailsLibraryButton';
 import { renderDetailsLogin } from './renderDetailsLogin';
@@ -26,6 +28,8 @@ export const renderDetails = (movie) => {
     id,
   } = movie;
 
+  const link = `${window.location.origin}/?id=${id}`;
+
   const markup = templateDetails(
     languagePackage,
     language,
@@ -37,11 +41,26 @@ export const renderDetails = (movie) => {
     popularity,
     joinGenres(genres),
     overview,
-    id
+    id,
+    link
   );
 
   rootDetails.innerHTML = '';
   rootDetails.insertAdjacentHTML('afterbegin', markup);
+
+  Sharer.init();
+  const shareButton = document.querySelector('[data-share="link"]');
+  shareButton.addEventListener('click', () => {
+    const link = shareButton.getAttribute('data-url');
+    navigator.clipboard
+      .writeText(link)
+      .then(() =>
+        handleNotification(
+          'success',
+          languagePackage.shareLinkButton[language]
+        )
+      );
+  });
 
   if (checkToken()) {
     renderDetailsLibraryButton('watched', movie);

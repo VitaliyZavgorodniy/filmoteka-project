@@ -101,6 +101,21 @@
     "ru": "убрать из очереди",
     "en": "remove from queue"
   },
+  "shareButtons": {
+    "uk": "Поділитися:",
+    "ru": "Поделиться:",
+    "en": "Share:"
+  },
+  "shareLinkButton": {
+    "uk": "Посилання скопійовано",
+    "ru": "Ссылка скопирована",
+    "en": "Link copied"
+  },
+  "shareText": {
+    "uk": "Хей! Дивись який фільм мені сподобався",
+    "ru": "Эй! Смотри какой фильм мне понравился",
+    "en": "Hey! See which movie I liked"
+  },
 
   "messageNothingFound": {
     "uk": "Упс... а тут нічого немає",
@@ -121,5 +136,10 @@
     "uk": "Ви ще нічого не додали до бібліотеки",
     "ru": "Вы еще ничего не добавили в библиотеку",
     "en": "You haven't added anything to the library yet"
+  },
+  "messageNotFound": {
+    "uk": "Фільм не знайдено",
+    "ru": "Фильм не найден",
+    "en": "Movie not found"
   }
 }

@@ -48,12 +48,12 @@ export const templateAuthorsModal = () => `
             <p class="authors__name">Алексей</p>
           </li>
           <li class="authors__item">
-            <img src="${auth_monica}" alt="Алена Коваль" class="authors__thumb">
-            <p class="authors__name">Алена Коваль</p>
+            <img src="${auth_monica}" alt="Alona Koval" class="authors__thumb">
+            <p class="authors__name">Alona Koval</p>
           </li>
           <li class="authors__item">
-            <img src="${auth_perry}" alt="Нет Имени" class="authors__thumb">
-            <p class="authors__name">Нет Имени</p>
+            <img src="${auth_perry}" alt="Bezvershuk Dmitriy" class="authors__thumb">
+            <p class="authors__name">Bezvershuk Dmitriy</p>
           </li>
         </ul>
       </div>

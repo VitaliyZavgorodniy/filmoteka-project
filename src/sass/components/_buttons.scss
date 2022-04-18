@@ -166,3 +166,37 @@ html {
   fill: #f61c0d;
   transition: fill $animation-duration $bezier-transition;
 }
+
+.sharing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+
+  &__item {
+    margin-right: 5px;
+
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    transform: scale(1);
+    transition: transform $ease-transition;
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+  }
+
+  &__icon {
+    
+  }
+}

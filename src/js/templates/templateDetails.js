@@ -1,6 +1,8 @@
 import iconCloseButton from '../../assets/icons/close.svg';
 import youtubeIcon from '../../assets/icons/sprite.svg';
 
+import iconShare from '../../assets/icons/share.svg';
+
 export const templateDetails = (
   lngPack,
   language,
@@ -12,7 +14,9 @@ export const templateDetails = (
   popularity,
   genres,
   overview,
-  id
+  id,
+  link,
+  message
 ) => `
   <div class="modal">
     <button class="close-modal-button" type="button" data-modal-close data-action="close-modal">
@@ -97,6 +101,61 @@ export const templateDetails = (
           </li>
           <li class="details-popup__menu_item" data-root="queue">
 
+          </li>
+        </ul>
+        
+        <p class="details-popup__subtitle details-popup__block">
+          ${lngPack.shareButtons[language]}
+        </p>
+
+        <ul class="sharing">
+          <li class="sharing__item">
+            <button 
+              class="sharing__button" 
+              data-share="link" 
+              data-url="${link}"
+            >
+              <svg class="sharing__icon" width="31" height="31">
+                <use href="${iconShare}#link"></use>
+              </svg>
+            </button>          
+          </li>
+          <li class="sharing__item">
+            <button 
+              class="sharing__button" 
+              data-sharer="telegram" 
+              data-title="${lngPack.shareText[language]}: ${title}" 
+              data-url="${link}"
+            >
+              <svg class="sharing__icon" width="35" height="35">
+                <use href="${iconShare}#telegram"></use>
+              </svg>
+            </button>          
+          </li>
+          <li class="sharing__item">
+            <button 
+              class="sharing__button" 
+              data-sharer="facebook"
+              data-hashtag="filmoteka"
+              data-title="${lngPack.shareText[language]}: ${title}"
+              data-url="${link}"
+            >
+              <svg class="sharing__icon" width="35" height="35">
+                <use href="${iconShare}#facebook"></use>
+              </svg>
+            </button>          
+          </li>
+          <li class="sharing__item">
+            <button 
+              class="sharing__button" 
+              data-sharer="linkedin"
+              data-title="${lngPack.shareText[language]}: ${title}" 
+              data-url="${link}"
+            >
+              <svg class="sharing__icon" width="35" height="35">
+                <use href="${iconShare}#linkedin"></use>
+              </svg>
+            </button>          
           </li>
         </ul>
       </div>

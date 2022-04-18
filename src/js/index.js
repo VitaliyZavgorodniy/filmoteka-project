@@ -1,4 +1,5 @@
 import { store } from './store';
+// import 'sharer.js';
 
 import './handlers/handleLink';
 import './handlers/handleLibType';
@@ -10,12 +11,15 @@ import './handlers/handleScrollUp';
 import './handlers/handleLanguage';
 import './handlers/handleTrailer';
 import './handlers/handleAuthorsModal';
+import { openDetails } from './handlers/handleDetails';
 
 import { fetchGenres } from './services/serviceMoviesAPI';
 
 import { initHome } from './pages/home';
 import { initLibrary } from './pages/library';
+
 import { changeLanguage } from './utils/changeLanguage';
+import { removeQuery } from './utils/removeQuery';
 
 (async () => {
   const { menuLinks, homeLink } = store.refs;
@@ -36,7 +40,7 @@ import { changeLanguage } from './utils/changeLanguage';
   if (initPage) {
     if (initPage === 'home') initHome();
     if (initPage === 'library') initLibrary();
-    
+
     menuLinks.forEach((link) => {
       if (link.getAttribute('data-page') === initPage)
         link.classList.add('active');
@@ -45,5 +49,12 @@ import { changeLanguage } from './utils/changeLanguage';
   } else {
     initHome();
     homeLink.classList.add('active');
+  }
+
+  const params = new URLSearchParams(window.location.search);
+  const movieID = params.get('id');
+  if (movieID) {
+    removeQuery();
+    openDetails(null, params.get('id'));
   }
 })();
