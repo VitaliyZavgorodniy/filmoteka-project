@@ -1,4 +1,5 @@
 import { store } from '../../store';
+import languagePackage from '../../store/languagePackage.json';
 
 import {
   updateLibrary,
@@ -16,11 +17,14 @@ const showSpinner = (root) => {
   root.insertAdjacentHTML('afterbegin', templateSpinner());
 };
 
-export const renderDetailsLibraryButton = async (library = watched, movie) => {
+export const renderDetailsLibraryButton = async (
+  library = 'watched',
+  movie
+) => {
   const buttonRoot = document.querySelector(`[data-root="${library}"]`);
   const { id } = movie;
   const { uid } = store.user;
-  const { mode } = store;
+  const { mode, language } = store;
 
   showSpinner(buttonRoot);
 
@@ -31,7 +35,10 @@ export const renderDetailsLibraryButton = async (library = watched, movie) => {
   if (isContains) {
     buttonRoot.insertAdjacentHTML(
       'afterbegin',
-      templateDetailsButton(`data-remove-${library}`, `remove from ${library}`)
+      templateDetailsButton(
+        `data-remove-${library}`,
+        languagePackage[`${library}RemoveButton`][language]
+      )
     );
 
     document
@@ -46,7 +53,10 @@ export const renderDetailsLibraryButton = async (library = watched, movie) => {
   } else {
     buttonRoot.insertAdjacentHTML(
       'afterbegin',
-      templateDetailsButton(`data-add-${library}`, `add to ${library}`)
+      templateDetailsButton(
+        `data-add-${library}`,
+        languagePackage[`${library}AddButton`][language]
+      )
     );
 
     document

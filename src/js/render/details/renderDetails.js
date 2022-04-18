@@ -1,4 +1,6 @@
 import { store } from '../../store';
+import languagePackage from '../../store/languagePackage.json';
+
 import { openTrailer } from '../../handlers/handleTrailer';
 import { closeDetails } from '../../handlers/handleDetails';
 
@@ -10,8 +12,10 @@ import { checkToken } from '../../utils/checkToken';
 import { joinGenres } from '../../utils/joinGenres';
 
 export const renderDetails = (movie) => {
+  const { language } = store;
   const { rootDetails } = store.refs;
   const {
+    title,
     original_title,
     popularity,
     overview,
@@ -23,7 +27,10 @@ export const renderDetails = (movie) => {
   } = movie;
 
   const markup = templateDetails(
+    languagePackage,
+    language,
     poster_path,
+    title,
     original_title,
     vote_average,
     vote_count,

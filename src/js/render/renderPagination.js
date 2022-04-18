@@ -20,6 +20,7 @@ export const renderPagination = (totalItems = 1) => {
   });
 
   instance.on('beforeMove', (e) => {
+    store.page = e.page;
     upToTop();
     handleGallery(mode, e.page, store.query);
   });

@@ -1,7 +1,10 @@
 import iconCloseButton from '../../assets/icons/close.svg';
 
 export const templateDetails = (
+  lngPack,
+  language,
   poster_path,
+  title,
   original_title,
   vote_average,
   vote_count,
@@ -42,31 +45,47 @@ export const templateDetails = (
       </div>
 
       <div class="details-popup__info">
-        <h2 class="details-popup__title">${original_title}</h2>
+        <h2 class="details-popup__title">${title}</h2>
 
         <table class="ranks-table details-popup__block">
           <tr>
-            <th class="ranks-table__head">Vote / Votes</th>
+            <th class="ranks-table__head">
+              ${lngPack.modalVotes[language]}
+            </th>
             <td class="ranks-table__cell">
               <span class="rating rating_accent">${vote_average}</span> /
               <span class="rating">${vote_count}</span>
             </td>
           </tr>
           <tr>
-            <th class="ranks-table__head">Popularity</th>
-            <td class="ranks-table__cell">${popularity}</td>
+            <th class="ranks-table__head">
+              ${lngPack.modalPopularity[language]}
+            </th>
+            <td class="ranks-table__cell">
+              ${popularity}
+            </td>
           </tr>
           <tr>
-            <th class="ranks-table__head">Original Title</th>
-            <td class="ranks-table__cell">${original_title}</td>
+            <th class="ranks-table__head">
+              ${lngPack.modalTitle[language]}
+            </th>
+            <td class="ranks-table__cell">
+              ${original_title}
+            </td>
           </tr>
           <tr>
-            <th class="ranks-table__head">Genre</th>
-            <td class="ranks-table__cell">${genres}</td>
+            <th class="ranks-table__head">
+              ${lngPack.modalGenres[language]}
+            </th>
+            <td class="ranks-table__cell">
+              ${genres}
+            </td>
           </tr>
         </table>
 
-        <p class="details-popup__subtitle details-popup__block">About</p>
+        <p class="details-popup__subtitle details-popup__block">
+          ${lngPack.modalAbout[language]}
+        </p>
         <p class="details-popup__description details-popup__block">
           ${overview}
         </p>

@@ -1,7 +1,7 @@
 .header {
   background-color: #000;
-
   &__container {
+    position: relative;
     height: 230px;
     padding-top: 40px;
     background-color: #000;
@@ -147,6 +147,24 @@
 
   @include breakpoint(desktop) {
     margin-top: 42px;
+  }
+}
+.change-lang {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  background-color: transparent;
+  color: #ffffff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  @include breakpoint(tablet) {
+    right: 50px;
+    top: auto;
+  }
+  &__item {
+    color: #000000;
   }
 }
 

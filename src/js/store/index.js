@@ -1,4 +1,5 @@
 export const store = {
+  language: 'en',
   user: null,
   genresList: [],
   page: 1,
@@ -24,5 +25,6 @@ export const store = {
     btnLogout: document.querySelector('[data-action="logout"]'),
     rootErrors: document.querySelector('.errors-info'),
     authorsModalLink: document.querySelector('[data-action="authors-modal"]'),
+    refLangSelector: document.querySelector('.change-lang'),
   },
 };

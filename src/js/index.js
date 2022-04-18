@@ -7,6 +7,7 @@ import './handlers/handleLogout';
 import './handlers/handleSearch';
 import './handlers/handleDetails';
 import './handlers/handleBtnUp';
+import './handlers/handleLanguage';
 import './handlers/handleTrailer';
 import './handlers/handleAuthorsModal';
 
@@ -14,11 +15,20 @@ import { fetchGenres } from './services/serviceMoviesAPI';
 
 import { initHome } from './pages/home';
 import { initLibrary } from './pages/library';
+import { changeLanguage } from './utils/changeLanguage';
 
 (async () => {
   const { menuLinks, homeLink } = store.refs;
 
-  const genres = await fetchGenres();
+  const lang = localStorage.getItem('language');
+
+  if (lang && lang !== store.language) {
+    store.language = lang;
+    changeLanguage();
+    store.refs.refLangSelector.value = lang;
+  }
+
+  const genres = await fetchGenres(store.language);
   store.genresList = genres;
 
   const initPage = localStorage.getItem('page');

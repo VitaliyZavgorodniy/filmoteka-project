@@ -1,0 +1,104 @@
+{
+  "homeButton": {
+    "uk": "головна",
+    "ru": "главная",
+    "en": "home"
+  },
+  "libraryButton": {
+    "uk": "моя бібліотека",
+    "ru": "моя библиотека",
+    "en": "my library"
+  },
+  "searchInput": {
+    "uk": "Пошук фільмів за назвою",
+    "ru": "Поиск фильмов по названию",
+    "en": "Search for movies..."
+  },
+  "watchedLibFolder": {
+    "uk": "Переглянуто",
+    "ru": "Просмотренные",
+    "en": "Watched"
+  },
+  "queueLibFolder": {
+    "uk": "Черга",
+    "ru": "Очередь",
+    "en": "Queue"
+  },
+  "singInButton": {
+    "uk": "Війти через Google",
+    "ru": "Войти через Google",
+    "en": "Sign in with Google"
+  },
+  "logOutButton": {
+    "uk": "Вийти",
+    "ru": "Выйти",
+    "en": "Log Out"
+  },
+  "footerCopyright": {
+    "uk": "© 2021 | Всі права захищені |",
+    "ru": "© 2021 | Все права защищены |",
+    "en": "© 2021 | All Rights Reserved |"
+  },
+  "footerDeveloped": {
+    "uk": "Зроблено",
+    "ru": "Сделано",
+    "en": "Developed with"
+  },
+  "footerBy": {
+    "uk": "",
+    "ru": "",
+    "en": "by"
+  },
+  "footerAuthors": {
+    "uk": "Студентами GoIT",
+    "ru": "Студентами GoIT",
+    "en": "GoIT Students"
+  },
+
+  "modalVotes": {
+    "uk": "Рейтинг/Голоси",
+    "ru": "Рейтинг/Голоса",
+    "en": "Vote / Votes"
+  },
+  "modalPopularity": {
+    "uk": "Популярність",
+    "ru": "Популярность",
+    "en": "Popularity"
+  },
+  "modalTitle": {
+    "uk": "Ориг. назва",
+    "ru": "Ориг. название",
+    "en": "Original Title"
+  },
+  "modalGenres": {
+    "uk": "Жанри",
+    "ru": "Жанры",
+    "en": "Genre"
+  },
+  "modalAbout": {
+    "uk": "Фільм про",
+    "ru": "Фильм о",
+    "en": "About"
+  },
+
+  "watchedAddButton": {
+    "uk": "до переглянутих",
+    "ru": "в просмотренные",
+    "en": "add to watched"
+  },
+  "queueAddButton": {
+    "uk": "в чергу",
+    "ru": "в очередь",
+    "en": "add to queue"
+  },
+  "watchedRemoveButton": {
+    "uk": "прибрати з переглянутих",
+    "ru": "убрать из просмотренных",
+    "en": "remove from watched"
+  },
+  "queueRemoveButton": {
+    "uk": "прибрати з черги",
+    "ru": "убрать из очереди",
+    "en": "remove from queue"
+  }
+}
