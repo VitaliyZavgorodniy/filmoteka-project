@@ -1,6 +1,4 @@
-import iconCloseButton from '../../assets/icons/sprite.svg';
-import youtubeIcon from '../../assets/icons/sprite.svg';
-
+import sprite from '../../assets/icons/sprite.svg';
 import iconShare from '../../assets/icons/share.svg';
 
 export const templateDetails = (
@@ -20,15 +18,15 @@ export const templateDetails = (
 ) => `
   <div class="modal">
     <button class="close-modal-button" type="button" data-modal-close data-action="close-modal">
-      <svg class="close-modal-button__icon" alt="close"  data-action="close-modal">
-      <use href="${iconCloseButton}#modal-close"></use>
+      <svg class="close-modal-button__icon" alt="close" data-action="close-modal">
+      <use href="${sprite}#modal-close"></use>
       </svg>
     </button>
     <div class="details-popup">
       <div class="details-popup__thumb">
         <button type="button" class="watch-trailer-btn is-hidden" data-id="${id}">
           <svg class="watch-trailer-btn__icon" width="70" height="50">
-            <use href="${youtubeIcon}#icon-youtube"></use>
+            <use href="${sprite}#icon-youtube"></use>
           </svg>
       </button>
         <picture class="card__image">
