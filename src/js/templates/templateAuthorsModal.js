@@ -76,7 +76,7 @@ const authorsData = [
     img: auth_brad_pitt,
     github: 'https://github.com/rumpear',
     linkedin: 'https://www.linkedin.com/in/roman-grusha-775135206/',
-    facebook: '',
+    facebook: 'https://www.facebook.com/r.grusha/',
   },
   {
     name: 'Tatiana Sierkova',
@@ -102,14 +102,14 @@ const authorsData = [
   {
     name: 'Vladyslav Rozhenko',
     img: auth_joey,
-    github: '',
+    github: 'https://github.com/xXMrSnakeXx',
     linkedin: '',
     facebook: '',
   },
   {
-    name: 'Алексей',
+    name: 'Aleksey Forunatov',
     img: auth_mike,
-    github: '',
+    github: 'https://github.com/fortuk',
     linkedin: '',
     facebook: '',
   },
