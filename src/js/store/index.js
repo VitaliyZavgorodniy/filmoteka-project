@@ -17,7 +17,7 @@ export const store = {
     rootMenu: document.querySelector('.navigation__menu'),
     menuLinks: document.querySelectorAll('.navigation__link'),
     refsLink: document.querySelectorAll('[data-action="go-page"]'),
-    homeLink: document.querySelector('[data-page="home"]'),
+    homeLink: document.querySelector('[init]'),
     refSearchform: document.querySelector('[data-root="search-bar"]'),
     refLibsSelect: document.querySelector('[data-root="library-buttons"]'),
     refLoginHeader: document.querySelector('[data-root="header-login"]'),

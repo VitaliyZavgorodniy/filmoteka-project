@@ -1,5 +1,4 @@
 import { store } from './store';
-// import 'sharer.js';
 
 import './handlers/handleLink';
 import './handlers/handleLibType';
