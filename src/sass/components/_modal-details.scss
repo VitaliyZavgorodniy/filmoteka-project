@@ -9,22 +9,24 @@
   }
 
   &__thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     min-width: 240px;
-    min-height: 357px;
+    height: 357px;
+
+    overflow: hidden;
+    border-radius: 5px;
 
     @include breakpoint(tablet) {
       min-width: 264px;
-      min-height: 370px;
+      height: 370px;
     }
 
     @include breakpoint(desktop) {
       min-width: 375px;
-      min-height: 470px;
-      height: auto;
-    }
-
-    & img {
-      border-radius: 5px;
+      height: 470px;
     }
   }
 
