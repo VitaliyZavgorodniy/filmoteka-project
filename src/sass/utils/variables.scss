@@ -15,6 +15,11 @@ $accent-shadow: rgba(255, 107, 1, 0.6);
 $grey-shadow: 0px 0px 4px 1px #f7f7f7;
 $bg-gradient: linear-gradient(#00000056, #00000056);
 
+$movie-filtr-container: linear-gradient(to right, rgb(254, 253, 251), antiquewhite, rgb(255, 231, 235), antiquewhite, rgb(254, 253, 251));
+$movie-filtr-title: 2px 2px 6px rgb(239, 177, 122);
+$movie-filtr-box: rgb(176, 170, 170);
+$movie-filtr-list: #282828;
+
 $animation-duration: 250ms;
 $bezier-transition: cubic-bezier(0.4, 0, 0.2, 1);
 $ease-transition: 250ms ease-in-out;
