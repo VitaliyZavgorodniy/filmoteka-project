@@ -1,6 +1,7 @@
 import { store } from './store';
 // import 'sharer.js';
 
+import './handlers/handleTheme';
 import './handlers/handleLink';
 import './handlers/handleLibType';
 import './handlers/handleLogin';
