@@ -77,8 +77,8 @@ const authorsData = [
   {
     name: 'Roman Grusha',
     img: auth_brad_pitt,
-    github: '',
-    linkedin: '',
+    github: 'https://github.com/rumpear',
+    linkedin: 'https://www.linkedin.com/in/roman-grusha-775135206/',
     facebook: '',
   },
   {
