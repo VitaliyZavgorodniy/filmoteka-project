@@ -7,6 +7,8 @@ export const store = {
   modes: ['trend', 'find', 'queue', 'watched'],
   refs: {
     body: document.querySelector('body'),
+    themeLightBtn: document.querySelector('.change-theme__btn'),
+    themeDarkBtn: document.querySelector('.change-theme__btn-dark'),
     rootHeader: document.querySelector('.header__container'),
     rootPagination: document.querySelector('[data-root="pagination"]'),
     rootDetails: document.querySelector('[data-modal]'),

@@ -1,4 +1,4 @@
-import iconCloseButton from '../../assets/icons/close.svg';
+import iconCloseButton from '../../assets/icons/sprite.svg';
 import youtubeIcon from '../../assets/icons/sprite.svg';
 
 import iconShare from '../../assets/icons/share.svg';
@@ -20,12 +20,9 @@ export const templateDetails = (
 ) => `
   <div class="modal">
     <button class="close-modal-button" type="button" data-modal-close data-action="close-modal">
-      <img 
-        class="close-modal-button__icon"
-        src=${iconCloseButton}
-        alt="close"
-        data-action="close-modal"
-      </img>  
+      <svg class="close-modal-button__icon" alt="close"  data-action="close-modal">
+      <use href="${iconCloseButton}#modal-close"></use>
+      </svg>
     </button>
     <div class="details-popup">
       <div class="details-popup__thumb">

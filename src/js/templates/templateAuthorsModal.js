@@ -1,4 +1,4 @@
-import iconCloseButton from '../../assets/icons/close.svg';
+import iconCloseButton from '../../assets/icons/sprite.svg';
 
 import auth_brad_pitt from '../../assets/photos/brad_pitt.jpg';
 import auth_clooney from '../../assets/photos/auth_clooney.jpg';
@@ -13,12 +13,9 @@ import links from '../../assets/icons/share.svg';
 export const templateAuthorsModal = (langPack, language) => `
     <div class="modal">
       <button class="close-modal-button" type="button" data-modal-close data-action="close-modal">
-        <img 
-          class="close-modal-button__icon"
-          src=${iconCloseButton}
-          alt="close"
-          data-action="close-modal"
-        </img>  
+      <svg class="close-modal-button__icon" alt="close"  data-action="close-modal">
+      <use href="${iconCloseButton}#modal-close"></use>
+      </svg>  
       </button>
       
       <div class="authors">

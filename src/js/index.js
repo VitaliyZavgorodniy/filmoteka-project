@@ -1,5 +1,6 @@
 import { store } from './store';
 
+import './handlers/handleTheme';
 import './handlers/handleLink';
 import './handlers/handleLibType';
 import './handlers/handleLogin';
