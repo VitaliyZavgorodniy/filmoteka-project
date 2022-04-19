@@ -2,12 +2,12 @@ body.dark-theme {
   background-color: #262626;
   color: $white-color;
   .header {
-    box-shadow: 0 0 14px 13px rgb(255 107 1 / 43%);
+    box-shadow: $dark-theme-shadow;
   }
   .footer {
     background-color: #262626;
     color: $white-color;
-    box-shadow: 0 0 14px 13px rgb(255 107 1 / 43%);
+    box-shadow: $dark-theme-shadow;
     &__text {
       color: inherit;
     }
@@ -23,7 +23,7 @@ body.dark-theme {
   }
   .modal {
     background-color: #262626;
-    box-shadow: 0 0 14px 13px rgb(255 107 1 / 43%);
+    box-shadow: $dark-theme-shadow;
   }
   .close-modal-button__icon {
     fill: $white-color;

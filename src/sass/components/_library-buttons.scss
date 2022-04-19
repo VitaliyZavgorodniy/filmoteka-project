@@ -30,7 +30,7 @@
       cursor: pointer;
       background-color: $accent-color;
       border: 1px solid $accent-color;
-      box-shadow: 0px 8px 43px $accent-shadow;
+      box-shadow: $accent-shadow;
     }
 
     &:not(:last-child) {
