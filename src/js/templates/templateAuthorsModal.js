@@ -10,7 +10,7 @@ import auth_ross from '../../assets/photos/auth_ross.jpg';
 import auth_mike from '../../assets/photos/auth_mike.jpg';
 import links from '../../assets/icons/share.svg';
 
-export const templateAuthorsModal = () => `
+export const templateAuthorsModal = (langPack, language) => `
     <div class="modal">
       <button class="close-modal-button" type="button" data-modal-close data-action="close-modal">
         <img 
@@ -22,7 +22,7 @@ export const templateAuthorsModal = () => `
       </button>
       
       <div class="authors">
-        <h3 class="authors__title">Authors</h3>
+        <h3 class="authors__title">${langPack.authorsTitle[language]}</h3>
         <ul class="authors__list">
             ${authorsList()}
         </ul>

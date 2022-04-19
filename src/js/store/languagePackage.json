@@ -169,5 +169,11 @@
     "de": "Film nicht gefunden",
     "uk": "Фільм не знайдено",
     "ru": "Фильм не найден"
+  },
+  "authorsTitle": {
+    "en": "Authors",
+    "de": "Autoren",
+    "uk": "Автори",
+    "ru": "Авторы"
   }
 }
