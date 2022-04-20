@@ -112,6 +112,7 @@
   }
 
   &__item {
+    width: 120px;
     margin-right: 4px;
     border: 1px solid $light-grey;
     border-radius: 5px;
@@ -122,12 +123,12 @@
   }
 
   &__thumb {
-    width: 120px;
+    width: 100%;
     height: 133px;
     background-position: top;
     background-size: cover;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
   }
 
   &__name {
