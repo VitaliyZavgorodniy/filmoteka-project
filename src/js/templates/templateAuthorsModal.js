@@ -81,7 +81,7 @@ const authorsData = [
   {
     name: 'Tatiana Sierkova',
     img: auth_jeniffer,
-    github: '',
+    github: 'https://github.com/TanuhaSerkova',
     linkedin: '',
     facebook: '',
   },
