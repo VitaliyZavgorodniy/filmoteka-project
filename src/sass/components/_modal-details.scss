@@ -115,6 +115,10 @@
       height: 10px;
     }
 
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -123,12 +127,15 @@
       height: 100%;
       width: 10px;
       background: linear-gradient(to right, transparent, #fff);
+
+      body.dark-theme & {
+        background: linear-gradient(to right, transparent, #262626);
+      }
     }
   }
 
   &__item {
     max-width: 120px;
-    width: 100%;
     margin-right: 4px;
     border: 1px solid $light-grey;
     border-radius: 5px;
@@ -139,7 +146,7 @@
   }
 
   &__thumb {
-    width: 100%;
+    width: 120px;
     height: 133px;
     background-position: top;
     background-size: cover;
@@ -150,11 +157,11 @@
   &__name {
     margin-top: 5px;
     padding: 0 3px;
-    @include font(500, 14px, 14px);
+    @include font(500, 14px, 14px, inherit);
   }
 
   &__role {
     padding: 3px;
-    @include font(400, 12px, 12px);
+    @include font(400, 12px, 12px, inherit);
   }
 }

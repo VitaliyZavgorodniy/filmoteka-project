@@ -1,9 +1,9 @@
 .section {
   width: 100%;
-  padding: 20px 0 40px;
+  padding: 32px 0 40px;
 
   @include breakpoint(tablet) {
-    padding: 20px 0 60px;
+    padding: 32px 0 60px;
   }
 }
 
