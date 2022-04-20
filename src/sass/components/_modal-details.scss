@@ -105,9 +105,10 @@
   overflow-y: hidden;
   display: flex;
   margin-top: 10px;
+  padding-bottom: 5px;
 
   &::-webkit-scrollbar {
-    display: none;
+    height: 8px;
   }
 
   &__item {
