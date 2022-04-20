@@ -112,8 +112,8 @@
 
   &__item {
     margin-right: 4px;
-
-    border: 1px solid $grey-bg;
+    border: 1px solid $light-grey;
+    border-radius: 5px;
 
     &:last-child {
       margin-right: 0;
@@ -129,16 +129,14 @@
     border-top-right-radius: 5px;
   }
 
-  &__image {
-  }
-
   &__name {
     margin-top: 5px;
+    padding: 0 3px;
     @include font(500, 14px, 14px);
   }
 
   &__role {
-    margin-top: 3px;
+    padding: 3px;
     @include font(400, 12px, 12px);
   }
 }
