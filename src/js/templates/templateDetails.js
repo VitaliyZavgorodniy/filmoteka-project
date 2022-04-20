@@ -170,9 +170,11 @@ export const templateDetails = (
     <p class="details-popup__subtitle details-popup__block">
           ${lngPack.modalCast[language]}
         </p>
-        <ul class="cast">
+    <div class="cast">
+        <ul class="cast__list">
           ${templateDetailsCast(cast)}
         </ul>
+    </div>
   </div>
 `;
 
