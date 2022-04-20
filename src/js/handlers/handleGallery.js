@@ -33,7 +33,7 @@ export const handleGallery = () => {
         return;
       }
 
-      if (page == 1) renderPagination(totalItems);
+      if (page === 1) renderPagination(totalItems);
       list.length && renderGallery(list);
     });
   }

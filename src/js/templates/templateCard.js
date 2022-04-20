@@ -23,7 +23,7 @@ export const templateCard = (
             data-category="${category}"
             alt="${title}"
             loading="lazy"
-            src="https://themoviedb.org/t/p/w185${poster_path}"
+            src="https://themoviedb.org/t/p/w342${poster_path}"
           />
         </picture>
       </div>
