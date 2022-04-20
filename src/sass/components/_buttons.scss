@@ -215,3 +215,28 @@ html {
   &__icon {
   }
 }
+
+.categories {
+  display: flex;
+
+  &__label {
+    display: block;
+    margin-right: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: $black-color;
+    background-color: $white-color;
+    transition: background-color $ease-transition, color $ease-transition;
+
+    &:hover {
+      cursor: pointer;
+      color: $white-color;
+      background-color: $accent-color;
+    }
+  }
+
+  &__input:checked + &__label {
+    color: $white-color;
+    background-color: $accent-color;
+  }
+}

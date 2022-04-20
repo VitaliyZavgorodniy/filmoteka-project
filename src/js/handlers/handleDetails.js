@@ -8,8 +8,9 @@ import { renderSkeletonDetails } from '../render/renderSkeletonDetails';
 
 import { handleNotification } from './handleNotification';
 
-export const openDetails = (e, id) => {
+export const openDetails = (e, id, type) => {
   const index = id ? id : e?.target?.getAttribute('data-id');
+  const category = type ? type : e?.target?.getAttribute('data-category');
   if (!index) return;
 
   renderSkeletonDetails();
@@ -20,7 +21,7 @@ export const openDetails = (e, id) => {
   body.classList.add('is-open');
 
   index &&
-    fetchSingleMovie(language, index).then((res) => {
+    fetchSingleMovie(language, index, category).then((res) => {
       if (res) return renderDetails(res);
 
       handleNotification('error', languagePackage.messageNotFound[language]);

@@ -19,9 +19,9 @@ export const fetchGenres = async (language = 'en-US') => {
   return response[0].data.genres.concat(response[1].data.genres);
 };
 
-export const fetchTrending = async (language = 'en-US', page = 1) =>
+export const fetchTrending = async (language = 'en-US', page = 1, category) =>
   await axios
-    .get(`/trending/movie/day`, {
+    .get(`/trending/${category}/day`, {
       params: {
         language,
         page,
@@ -34,9 +34,14 @@ export const fetchTrending = async (language = 'en-US', page = 1) =>
     }))
     .catch((e) => console.error(e));
 
-export const fetchSearch = async (language = 'en-US', page = 1, query) =>
+export const fetchSearch = async (
+  language = 'en-US',
+  page = 1,
+  category,
+  query
+) =>
   await axios
-    .get(`/search/movie`, {
+    .get(`/search/${category}`, {
       params: {
         language,
         include_adult: false,
@@ -51,17 +56,17 @@ export const fetchSearch = async (language = 'en-US', page = 1, query) =>
     }))
     .catch((e) => console.error(e));
 
-export const fetchSingleMovie = async (language = 'en-US', id) =>
+export const fetchSingleMovie = async (language = 'en-US', id, category) =>
   await axios
-    .get(`/movie/${id}`, {
+    .get(`/${category}/${id}`, {
       params: { language },
     })
     .then((res) => ({ ...res.data }))
     .catch((e) => console.error(e));
 
-export const fetchMovieTrailer = async (movieId) => {
+export const fetchMovieTrailer = async (movieId, category) => {
   try {
-    const res = await axios.get(`/movie/${movieId}/videos`);
+    const res = await axios.get(`/${category}/${movieId}/videos`);
     return res.data.results;
   } catch (e) {
     return console.error(e);

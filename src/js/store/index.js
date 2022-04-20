@@ -2,6 +2,7 @@ export const store = {
   language: 'en',
   user: null,
   genresList: [],
+  category: 'all',
   page: 1,
   mode: null,
   modes: ['trend', 'find', 'queue', 'watched'],
@@ -28,5 +29,7 @@ export const store = {
     authorsModalLink: document.querySelector('[data-action="authors-modal"]'),
     refLangSelector: document.querySelector('.change-lang'),
     scrollUpBtn: document.querySelector('[data-action="scroll-up"]'),
+    categoryButtons: document.querySelectorAll('[name="category"]'),
+    categoriesRoot: document.querySelector('.categories'),
   },
 };

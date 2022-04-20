@@ -5,12 +5,13 @@ export const templateCard = (
   genresInfo,
   releaseYear,
   vote_average,
-  voteShow
+  voteShow,
+  category
 ) => `
   <li class="gallery__item">
-    <div class="card" data-id="${id}">
-      <div class="card__thumb" data-id="${id}"> 
-        <picture class="card__image" data-id="${id}">
+    <div class="card" data-id="${id}" data-category="${category}">
+      <div class="card__thumb" data-id="${id}" data-category="${category}"> 
+        <picture class="card__image" data-id="${id}" data-category="${category}">
           <source 
             srcset="https://themoviedb.org/t/p/w342${poster_path}"
             media="(min-width: 1024px)">
@@ -19,16 +20,21 @@ export const templateCard = (
             media="(min-width: 768px)">
           <img 
             data-id="${id}"
+            data-category="${category}"
             alt="${title}"
             loading="lazy"
             src="https://themoviedb.org/t/p/w185${poster_path}"
           />
         </picture>
       </div>
-      <h4 class="card__title" data-id="${id}">${title}</h4>
-      <p class="card__text" data-id="${id}">
+      <h4 class="card__title" data-id="${id}" data-category="${category}">${title}</h4>
+      <p class="card__text" data-id="${id}" data-category="${category}">
         ${genresInfo} | ${releaseYear}
-        ${voteShow ? '<span class="rating rating_accent">' + vote_average + '</span>' : ""}
+        ${
+          voteShow
+            ? '<span class="rating rating_accent">' + vote_average + '</span>'
+            : ''
+        }
       </p>
     </div>
   </li>

@@ -1,8 +1,9 @@
+import { store } from '../store';
 import { fetchMovieTrailer } from '../services/serviceMoviesAPI';
 import { renderTrailer } from '../render/renderTrailer';
 
-const getTrailers = async (movieId) => {
-  const results = await fetchMovieTrailer(movieId);
+const getTrailers = async (movieId, category) => {
+  const results = await fetchMovieTrailer(movieId, category);
   const officialTrailer = results.find((trailer) =>
     trailer.name.includes('Official')
   );
@@ -10,8 +11,8 @@ const getTrailers = async (movieId) => {
   return officialTrailer;
 };
 
-export const renderTrailerBtn = async (movieId) => {
-  const officialTrailer = await getTrailers(movieId);
+export const renderTrailerBtn = async (movieId, category) => {
+  const officialTrailer = await getTrailers(movieId, category);
 
   if (!officialTrailer) {
     return;
@@ -29,7 +30,8 @@ const openTrailerOnclick = () => {
   const watchTrailerBtnRef = document.querySelector('.watch-trailer-btn');
   watchTrailerBtnRef.addEventListener('click', async (e) => {
     const movieId = e.target.getAttribute('data-id');
-    const officialTrailer = await getTrailers(movieId);
+    const category = e.target.getAttribute('data-category');
+    const officialTrailer = await getTrailers(movieId, category);
 
     const { key: youtubeKey } = officialTrailer;
     showTrailerWindow();

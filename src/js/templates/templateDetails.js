@@ -14,7 +14,8 @@ export const templateDetails = (
   overview,
   id,
   link,
-  message
+  category,
+  date
 ) => `
   <div class="modal">
     <button class="close-modal-button" type="button" data-modal-close data-action="close-modal">
@@ -24,7 +25,7 @@ export const templateDetails = (
     </button>
     <div class="details-popup">
       <div class="details-popup__thumb">
-        <button type="button" class="watch-trailer-btn is-hidden" data-id="${id}">
+        <button type="button" class="watch-trailer-btn is-hidden" data-id="${id}" data-category="${category}">
           <svg class="watch-trailer-btn__icon" width="70" height="50">
             <use href="${sprite}#icon-youtube"></use>
           </svg>
@@ -71,6 +72,14 @@ export const templateDetails = (
             </th>
             <td class="ranks-table__cell">
               ${original_title}
+            </td>
+          </tr>
+          <tr>
+            <th class="ranks-table__head">
+              ${lngPack.modalDates[language]}
+            </th>
+            <td class="ranks-table__cell">
+              ${date}
             </td>
           </tr>
           <tr>

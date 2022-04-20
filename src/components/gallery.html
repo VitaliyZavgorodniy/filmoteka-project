@@ -1,6 +1,42 @@
 <section class="section">
   <div class="container">
     <h2 class="visually-hidden">Gallery</h2>
+    <div class="categories">
+      <input
+        class="categories__input visually-hidden"
+        type="radio"
+        id="all"
+        name="category"
+        value="all"
+        checked
+      />
+      <label class="categories__label" for="all" data-lang="categoryAllBtn"
+        >All</label
+      >
+
+      <input
+        class="categories__input visually-hidden"
+        type="radio"
+        id="movie"
+        name="category"
+        value="movie"
+      />
+      <label class="categories__label" for="movie" data-lang="categoryMoviesBtn"
+        >Movies</label
+      >
+
+      <input
+        class="categories__input visually-hidden"
+        type="radio"
+        id="tv"
+        name="category"
+        value="tv"
+      />
+      <label class="categories__label" for="tv" data-lang="categoryTvBtn"
+        >TV shows</label
+      >
+    </div>
+
     <ul class="gallery">
       <li class="gallery__item">
         <div class="card">

@@ -12,13 +12,13 @@ import { renderEmptyGallery } from '../render/renderEmptyGallery';
 import { handleNotification } from './handleNotification';
 
 export const handleGallery = () => {
-  const { mode, page, query, language, user } = store;
+  const { mode, page, query, language, user, category } = store;
   renderSkeletonGallery();
 
   if (mode === 'trend' || mode === 'find') {
     const fetchMethod = mode === 'find' ? fetchSearch : fetchTrending;
 
-    fetchMethod(language, page, query).then((res) => {
+    fetchMethod(language, page, category, query).then((res) => {
       const { list, totalItems } = res;
 
       if (!totalItems) {
@@ -43,7 +43,7 @@ export const handleGallery = () => {
       renderPagination();
       fetchLibrary(uid, mode).then((res) => {
         if (res.length) return renderGallery(res);
-        
+
         renderEmptyGallery();
         handleNotification(
           'info',

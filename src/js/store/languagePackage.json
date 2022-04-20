@@ -35,6 +35,26 @@
     "uk": "Війти через Google",
     "ru": "Войти через Google"
   },
+
+  "categoryAllBtn": {
+    "en": "All",
+    "de": "Alles",
+    "uk": "Всі",
+    "ru": "Все"
+  },
+  "categoryMoviesBtn": {
+    "en": "Movies",
+    "de": "Filme",
+    "uk": "Фільми",
+    "ru": "Фильмы"
+  },
+  "categoryTvBtn": {
+    "en": "TV shows",
+    "de": "Fernsehshows",
+    "uk": "Серіиали",
+    "ru": "Сериалы"
+  },
+
   "logOutButton": {
     "en": "Log Out",
     "de": "Ausloggen",
@@ -83,6 +103,12 @@
     "de": "Originaler Titel",
     "uk": "Ориг. назва",
     "ru": "Ориг. название"
+  },
+  "modalDates": {
+    "en": "Release",
+    "de": "Release",
+    "uk": "Риліз",
+    "ru": "Релиз"
   },
   "modalGenres": {
     "en": "Genre",

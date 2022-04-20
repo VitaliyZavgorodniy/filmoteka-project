@@ -5,5 +5,5 @@ export const filterGenres = (genres, ids) => {
     .join(', ');
 
   if (str) return str;
-  else return 'no genres';
+  else return '';
 };

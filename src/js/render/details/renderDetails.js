@@ -12,13 +12,17 @@ import { templateDetails } from '../../templates/templateDetails';
 
 import { checkToken } from '../../utils/checkToken';
 import { joinGenres } from '../../utils/joinGenres';
+import { checkCategory } from '../../utils/checkCategory';
+import { parseYear } from '../../utils/parseYear';
 
 export const renderDetails = (movie) => {
   const { language } = store;
   const { rootDetails } = store.refs;
   const {
     title,
+    name,
     original_title,
+    original_name,
     popularity,
     overview,
     vote_average,
@@ -26,23 +30,35 @@ export const renderDetails = (movie) => {
     genres,
     poster_path,
     id,
+    release_date,
+    first_air_date,
+    last_air_date,
   } = movie;
 
-  const link = `${window.location.origin}${window.location.pathname}?id=${id}`;
+  const cardTitle = name ? name : title;
+  const cardOriginalName = original_name ? original_name : original_title;
+  const category = checkCategory(name, title);
+  const link = `${window.location.origin}${window.location.pathname}?id=${id}&category=${category}`;
+  const date = parseYear(
+    release_date ? release_date : first_air_date,
+    last_air_date
+  );
 
   const markup = templateDetails(
     languagePackage,
     language,
     poster_path,
-    title,
-    original_title,
+    cardTitle,
+    cardOriginalName,
     vote_average,
     vote_count,
     popularity,
     joinGenres(genres),
     overview,
     id,
-    link
+    link,
+    category,
+    date
   );
 
   rootDetails.innerHTML = '';
@@ -66,7 +82,7 @@ export const renderDetails = (movie) => {
     renderDetailsLogin(movie);
   }
 
-  renderTrailerBtn(id);
+  renderTrailerBtn(id, category);
 
   document
     .querySelector('[data-modal-close]')

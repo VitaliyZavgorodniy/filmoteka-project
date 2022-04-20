@@ -11,6 +11,7 @@ import './handlers/handleScrollUp';
 import './handlers/handleLanguage';
 import './handlers/handleTrailer';
 import './handlers/handleAuthorsModal';
+import './handlers/handleCategory';
 import { openDetails } from './handlers/handleDetails';
 
 import { fetchGenres } from './services/serviceMoviesAPI';
@@ -55,6 +56,6 @@ import { removeQuery } from './utils/removeQuery';
   const movieID = params.get('id');
   if (movieID) {
     removeQuery();
-    openDetails(null, params.get('id'));
+    openDetails(null, params.get('id'), params.get('category'));
   }
 })();

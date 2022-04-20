@@ -1,4 +1,6 @@
-export const parseYear = (date) => {
-  if (date) return parseInt(date);
-  else return 'no date';
+export const parseYear = (fromDate, ToDate) => {
+  if (ToDate) return `${parseInt(fromDate)} - ${parseInt(ToDate)}`;
+
+  if (fromDate) return `${parseInt(fromDate)}`;
+  else return ' - ';
 };
