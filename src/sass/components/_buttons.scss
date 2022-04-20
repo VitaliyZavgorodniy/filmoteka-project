@@ -219,6 +219,10 @@ html {
 .categories {
   display: flex;
 
+  &.is-closed {
+    display: none;
+  }
+
   &__label {
     display: block;
     margin-right: 5px;

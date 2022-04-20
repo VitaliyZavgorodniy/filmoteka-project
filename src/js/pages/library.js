@@ -11,12 +11,13 @@ import { renderEmptyGallery } from '../render/renderEmptyGallery';
 import { renderPagination } from '../render/renderPagination';
 
 export const initLibrary = () => {
-  const { rootHeader, categoriesRoot } = store.refs;
+  const { rootHeader, categoriesRoot, typeRoot } = store.refs;
   const { language } = store;
 
   rootHeader.classList.add('header__container_library');
   rootHeader.classList.remove('header__container_home');
-  categoriesRoot.classList.add('is-hidden');
+  categoriesRoot.classList.add('is-closed');
+  typeRoot.classList.add('is-closed');
 
   localStorage.setItem('page', 'library');
 

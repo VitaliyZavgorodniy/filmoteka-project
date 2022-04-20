@@ -37,7 +37,7 @@ export const fetchTrending = async (language = 'en-US', page = 1, category) =>
 export const fetchSearch = async (
   language = 'en-US',
   page = 1,
-  category,
+  category = 'movie',
   query
 ) =>
   await axios

@@ -12,6 +12,7 @@ import './handlers/handleLanguage';
 import './handlers/handleTrailer';
 import './handlers/handleAuthorsModal';
 import './handlers/handleCategory';
+import './handlers/handleSearchType';
 import { openDetails } from './handlers/handleDetails';
 
 import { fetchGenres } from './services/serviceMoviesAPI';

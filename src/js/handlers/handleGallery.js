@@ -17,6 +17,7 @@ export const handleGallery = () => {
 
   if (mode === 'trend' || mode === 'find') {
     const fetchMethod = mode === 'find' ? fetchSearch : fetchTrending;
+    const category = mode === 'find' ? store.searchType : store.category;
 
     fetchMethod(language, page, category, query).then((res) => {
       const { list, totalItems } = res;

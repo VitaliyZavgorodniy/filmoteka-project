@@ -3,6 +3,7 @@ export const store = {
   user: null,
   genresList: [],
   category: 'all',
+  searchType: 'movie',
   page: 1,
   mode: null,
   modes: ['trend', 'find', 'queue', 'watched'],
@@ -29,7 +30,9 @@ export const store = {
     authorsModalLink: document.querySelector('[data-action="authors-modal"]'),
     refLangSelector: document.querySelector('.change-lang'),
     scrollUpBtn: document.querySelector('[data-action="scroll-up"]'),
+    categoriesRoot: document.querySelector('#categories'),
     categoryButtons: document.querySelectorAll('[name="category"]'),
-    categoriesRoot: document.querySelector('.categories'),
+    typeRoot: document.querySelector('#type'),
+    typeButtons: document.querySelectorAll('[name="type"]'),
   },
 };

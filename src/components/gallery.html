@@ -1,38 +1,63 @@
 <section class="section">
   <div class="container">
     <h2 class="visually-hidden">Gallery</h2>
-    <div class="categories">
+    <div class="categories" id="categories">
       <input
         class="categories__input visually-hidden"
         type="radio"
-        id="all"
+        id="cat-all"
         name="category"
         value="all"
         checked
       />
-      <label class="categories__label" for="all" data-lang="categoryAllBtn"
+      <label class="categories__label" for="cat-all" data-lang="categoryAllBtn"
         >All</label
       >
 
       <input
         class="categories__input visually-hidden"
         type="radio"
-        id="movie"
+        id="cat-movie"
         name="category"
         value="movie"
       />
-      <label class="categories__label" for="movie" data-lang="categoryMoviesBtn"
+      <label class="categories__label" for="cat-movie" data-lang="categoryMoviesBtn"
         >Movies</label
       >
 
       <input
         class="categories__input visually-hidden"
         type="radio"
-        id="tv"
+        id="cat-tv"
         name="category"
         value="tv"
       />
-      <label class="categories__label" for="tv" data-lang="categoryTvBtn"
+      <label class="categories__label" for="cat-tv" data-lang="categoryTvBtn"
+        >TV shows</label
+      >
+    </div>
+
+    <div class="categories" id="type">
+      <input
+        class="categories__input visually-hidden"
+        type="radio"
+        id="type-movie"
+        name="type"
+        value="movie"
+        checked
+      />
+      <label class="categories__label" for="type-movie" data-lang="categoryMoviesBtn"
+        >Movies</label
+      >
+
+      <input
+        class="categories__input visually-hidden"
+        type="radio"
+        id="type-tv"
+        name="type"
+        value="tv"
+      />
+      <label class="categories__label" for="type-tv" data-lang="categoryTvBtn"
         >TV shows</label
       >
     </div>

@@ -16,6 +16,9 @@ const handleSearch = (e) => {
     store.page = 1;
     store.query = query;
 
+    store.refs.categoriesRoot.classList.add('is-closed');
+    store.refs.typeRoot.classList.remove('is-closed');
+
     handleGallery();
   }
 
