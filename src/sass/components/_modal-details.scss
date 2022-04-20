@@ -1,7 +1,7 @@
 .details-popup {
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   @include breakpoint(tablet) {
     flex-direction: row;
@@ -34,7 +34,7 @@
 
     @include breakpoint(tablet) {
       margin-top: 0;
-      margin-left: 68px;
+      margin-left: 20px;
     }
 
     @include breakpoint(desktop) {
@@ -49,14 +49,14 @@
   &__menu {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-top: 0px;
   }
 
   &__menu_item {
-    margin-right: 15px;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    margin-top: 15px;
+    margin-left: 15px;
   }
 
   &__title {
@@ -98,4 +98,47 @@
 
 .details-popup__thumb {
   position: relative;
+}
+
+.cast {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  margin-top: 10px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__item {
+    margin-right: 4px;
+
+    border: 1px solid $grey-bg;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__thumb {
+    width: 120px;
+    height: 133px;
+    background-position: top;
+    background-size: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  &__image {
+  }
+
+  &__name {
+    margin-top: 5px;
+    @include font(500, 14px, 14px);
+  }
+
+  &__role {
+    margin-top: 3px;
+    @include font(400, 12px, 12px);
+  }
 }

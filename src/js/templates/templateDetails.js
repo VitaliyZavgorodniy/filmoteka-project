@@ -15,7 +15,8 @@ export const templateDetails = (
   id,
   link,
   category,
-  date
+  date,
+  cast
 ) => `
   <div class="modal">
     <button class="close-modal-button" type="button" data-modal-close data-action="close-modal">
@@ -162,7 +163,35 @@ export const templateDetails = (
             </button>          
           </li>
         </ul>
+
+        
       </div>
     </div>
+    <p class="details-popup__subtitle details-popup__block">
+          ${lngPack.modalCast[language]}
+        </p>
+        <ul class="cast">
+          ${templateDetailsCast(cast)}
+        </ul>
   </div>
 `;
+
+const templateDetailsCast = (cast) =>
+  cast
+    .map(({ character, name, profile_path }) =>
+      profile_path
+        ? `
+  <li class="cast__item">
+    <div 
+      class="cast__thumb" 
+      style="background-image:url(https://themoviedb.org/t/p/w185/${profile_path})"
+    >
+    </div>
+    
+    <h4 class="cast__name">${name}</h4>
+    <p class="cast__role">${character}</p>
+  </li>
+`
+        : ''
+    )
+    .join('');

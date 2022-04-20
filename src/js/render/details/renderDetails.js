@@ -33,6 +33,7 @@ export const renderDetails = (movie) => {
     release_date,
     first_air_date,
     last_air_date,
+    cast
   } = movie;
 
   const cardTitle = name ? name : title;
@@ -58,7 +59,8 @@ export const renderDetails = (movie) => {
     id,
     link,
     category,
-    date
+    date,
+    cast
   );
 
   rootDetails.innerHTML = '';

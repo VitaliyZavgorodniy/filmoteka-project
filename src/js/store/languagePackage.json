@@ -122,6 +122,12 @@
     "uk": "Про фільм",
     "ru": "Про фильм"
   },
+  "modalCast": {
+    "en": "Cast",
+    "de": "Cast",
+    "uk": "У ролях",
+    "ru": "В ролях"
+  },
 
   "watchedAddButton": {
     "en": "add to watched",

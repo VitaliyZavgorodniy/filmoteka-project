@@ -56,13 +56,23 @@ export const fetchSearch = async (
     }))
     .catch((e) => console.error(e));
 
-export const fetchSingleMovie = async (language = 'en-US', id, category) =>
-  await axios
+export const fetchSingleMovie = async (language = 'en-US', id, category) => {
+  const details = await axios
     .get(`/${category}/${id}`, {
       params: { language },
     })
     .then((res) => ({ ...res.data }))
     .catch((e) => console.error(e));
+
+  const cast = await axios
+    .get(`/${category}/${id}/credits`, {
+      params: { language },
+    })
+    .then((res) => [...res.data.cast])
+    .catch((e) => console.error(e));
+
+  return { ...details, cast };
+};
 
 export const fetchMovieTrailer = async (movieId, category) => {
   try {
